@@ -31,14 +31,13 @@ export default function Navbar() {
   return (
     <header 
       style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 999999,
         background: 'rgba(255, 255, 255, 0.65)',
         backdropFilter: 'saturate(180%) blur(20px)',
-        WebkitBackdropFilter: 'saturate(180%) blur(20px)', // Guaranteed Safari render engine support
+        WebkitBackdropFilter: 'saturate(180%) blur(20px)', 
         borderBottom: scrolled ? '1px solid rgba(168, 85, 247, 0.08)' : '1px solid transparent',
         boxShadow: scrolled ? '0 4px 25px rgba(0, 0, 0, 0.04)' : 'none',
-        transition: 'all 0.3s ease',
-        overflow: 'hidden'
+        transition: 'all 0.3s ease'
       }}
     >
       {/* Dynamic Left Mirror Shade (Theme Color Glow) - Isolated to Left Corner Only Rendering */}

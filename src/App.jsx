@@ -78,7 +78,6 @@ function App() {
     
     return (
       <div className="main-wrapper">
-        <Navbar />
         <Hero />
         <Services />
         <TrustAndPeople />
@@ -91,6 +90,7 @@ function App() {
         <FeaturedResources />
         <CTA />
         <Footer />
+        <Navbar />
       </div>
     )
   }

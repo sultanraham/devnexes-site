@@ -116,7 +116,8 @@ export default function Navbar() {
         position: 'fixed', top: 0, right: 0, bottom: 0, width: '280px',
         background: '#fff', zIndex: 10001, padding: '80px 40px',
         transform: mobileOpen ? 'translateX(0)' : 'translateX(100%)',
-        transition: '0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        visibility: mobileOpen ? 'visible' : 'hidden',
+        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
         boxShadow: '-10px 0 50px rgba(0,0,0,0.1)'
       }}>
         <button onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: 25, right: 25, background: 'none', border: 'none', fontSize: '2rem', cursor: 'pointer', color: '#1a1a2e' }}>×</button>

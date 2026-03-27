@@ -8,6 +8,7 @@
     "dev:python": "cd backend && python app.py",
     "dev": "concurrently -n \"DEVNEXES,PYTHON \" -c \"cyan.bold,magenta.bold\" \"npm run dev:react\" \"npm run dev:python\"",
     "build": "tsc && vite build",
+    "build:prod": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {

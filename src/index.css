@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary: #6c3aff;
+  --color-primary-dark: #3b1eb0;
+  --color-accent: #b469ff;
+  --color-pink: #d94fff;
+  --color-text-dark: #1e1e2f;
+  --color-text-muted: #555577;
+  --color-heading-dark: #1a1a2e;
+  
+  --grad-primary: linear-gradient(135deg, #7c3eff 0%, #3d1fc2 100%);
+  --grad-logo: linear-gradient(135deg, #ff60a8 0%, #3d1fc2 100%);
+  --color-highlight: #c175ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-dark);
+  background: #ffffff;
+}
+
+.logo-font {
+  font-family: 'Dancing Script', cursive;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up { animation: fadeUp 0.7s ease both; }

@@ -4,13 +4,15 @@ import os
 from dotenv import load_dotenv
 from supabase import create_client, Client
 
-# Initialize Flask with specific static folder settings
-# We point static_folder to the 'dist' directory which is one level up from 'backend'
-app = Flask(__name__, static_folder='../dist', static_url_path='')
+# Set directories properly for Render
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Dist is in the root (one level up from backend)
+DIST_FOLDER = os.path.join(BASE_DIR, '..', 'dist')
+
+app = Flask(__name__, static_folder=DIST_FOLDER, static_url_path='')
 CORS(app)
 
-# Load environment variables from the root folder
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Load environment variables
 load_dotenv(os.path.join(BASE_DIR, '..', '.env'))
 
 # 🛰️ SUPABASE CONFIGURATION
@@ -21,20 +23,11 @@ supabase_internal = None
 if SUB_URL and SUB_KEY:
     try:
         supabase_internal = create_client(SUB_URL, SUB_KEY)
-        print(f"[READY] Supabase Internal Handshake: SUCCESSFUL (URL: {SUB_URL[:15]}...)")
+        print("[READY] Supabase Internal Handshake: SUCCESSFUL (DB_SYNCHRONIZED)")
     except Exception as e:
         print(f"[ERROR] Supabase Init Failed: {e}")
 
-# IMPORTANT: Serve the React App for any route not handled by an API
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve(path):
-    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return send_from_directory(app.static_folder, 'index.html')
-
-# 📡 DATABASE PROXY ENDPOINT (For Admin)
+# API ENDPOINTS (MUST BE BEFORE CATCH-ALL)
 @app.route('/api/get-proposals', methods=['GET', 'OPTIONS'])
 def get_proposals():
     if request.method == 'OPTIONS': return jsonify({'status': 'ok'}), 200
@@ -45,7 +38,6 @@ def get_proposals():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# 🚀 CLIENT SUBMISSION PROXY
 @app.route('/api/send-proposal', methods=['POST', 'OPTIONS'])
 def send_proposal():
     if request.method == 'OPTIONS': return jsonify({'status': 'ok'}), 200
@@ -57,6 +49,14 @@ def send_proposal():
     except Exception as e:
         return jsonify({'error': str(e)}), 400
 
+# CATCH-ALL ROUTE: Serve React Static Files or index.html
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    return send_from_directory(app.static_folder, 'index.html')
+
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5006))
+    port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)

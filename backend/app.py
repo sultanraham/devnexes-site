@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify, make_response, send_from_directory
 from flask_cors import CORS
 import os
 import json
@@ -6,8 +6,19 @@ from datetime import datetime
 from dotenv import load_dotenv
 from supabase import create_client, Client
 
-# Load Environment
+# Configure static folder to point to React build
+app = Flask(__name__, static_folder='../dist', static_url_path='/')
+CORS(app)
+
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '../.env'))
+
+# Root route to serve React app
+@app.route('/')
+@app.route('/<path:path>')
+def serve_react(path=''):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    return send_from_directory(app.static_folder, 'index.html')
 
 # 🛰️ SUPABASE CONFIGURATION (Secure Internal Interface)
 SUB_URL = os.environ.get("SUPABASE_URL")

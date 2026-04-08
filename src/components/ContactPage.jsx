@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Footer from './Footer';
 import { db } from '../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';

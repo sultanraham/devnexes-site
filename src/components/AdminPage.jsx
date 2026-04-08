@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { db } from '../lib/firebase';
+import { collection, query, orderBy, getDocs } from 'firebase/firestore';
 
 const AdminPage = () => {
    const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,11 +43,17 @@ const AdminPage = () => {
    const fetchProposals = async () => {
       setLoading(true);
       try {
-         const response = await fetch('/api/get-proposals');
-         const data = await response.json();
-         setProposals(data || []);
+         const q = query(collection(db, "proposals"), orderBy("created_at", "desc"));
+         const querySnapshot = await getDocs(q);
+         const data = querySnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+            // Convert Firebase Timestamp to Date string for compatibility
+            created_at: doc.data().created_at?.toDate().toISOString() || new Date().toISOString()
+         }));
+         setProposals(data);
       } catch (err) {
-         console.error('Fetch error:', err);
+         console.error('Firebase Fetch error:', err);
       }
       setLoading(false);
    };

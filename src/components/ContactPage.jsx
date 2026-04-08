@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import Footer from './Footer';
+import { db } from '../lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const ContactPage = () => {
    const [formState, setFormState] = useState('idle');
@@ -20,21 +21,18 @@ const ContactPage = () => {
       setFormState('sending');
       
       try {
-         const response = await fetch('/api/send-proposal', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+         // Firebase Save
+         await addDoc(collection(db, "proposals"), {
+            ...formData,
+            created_at: serverTimestamp(),
+            status: 'new'
          });
          
-         if(response.ok) {
-            setFormState('success');
-         } else {
-            console.error('Transmission failed');
-            setFormState('idle');
-         }
+         setFormState('success');
       } catch (error) {
-         console.error('Network error:', error);
+         console.error('Firebase error:', error);
          setFormState('idle');
+         alert('Error sending message. Please check your Firebase configuration.');
       }
    };
 

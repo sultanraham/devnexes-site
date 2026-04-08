@@ -4,12 +4,13 @@ import { getAuth } from "firebase/auth";
 
 // TO BE REPLACED WITH USER'S ACTUAL CONFIG
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDkbJocVVGyssFruLOTGm9Ssqio30Zdu4c",
+  authDomain: "devnexes-site.firebaseapp.com",
+  projectId: "devnexes-site",
+  storageBucket: "devnexes-site.firebasestorage.app",
+  messagingSenderId: "300574724101",
+  appId: "1:300574724101:web:895ecf28ccc17c54ad0c6c",
+  measurementId: "G-W1RRR25RGE"
 };
 
 const app = initializeApp(firebaseConfig);

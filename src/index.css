@@ -21,10 +21,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 115%; /* Zoomed in slightly */
+}
+
 body {
   font-family: 'Inter', sans-serif;
   color: var(--color-text-dark);
   background: #ffffff;
+  line-height: 1.6;
 }
 
 .logo-font {

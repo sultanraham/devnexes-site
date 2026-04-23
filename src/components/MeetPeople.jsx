@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function MeetPeople() {
-  const magentaGradient = 'linear-gradient(90deg, #ff7eb3 0%, #3d1fc2 100%)'
+  const magentaGradient = 'linear-gradient(90deg, #ff8a00 0%, #ffae42 100%)'
   const primaryNavy = '#1a1a2e'
 
   return (
@@ -31,10 +31,10 @@ export default function MeetPeople() {
                 </svg>
              </div>
 
-             {/* Next Button (Solid Purple) */}
+             {/* Next Button (Solid Orange) */}
              <div style={{
                 width: 54, height: 54, borderRadius: '50%',
-                background: '#5a21b3', // Deep Purple
+                background: '#ff8a00', // Vibrant Orange
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer', transition: 'all 0.3s', color: '#ffffff'
              }}>

@@ -90,23 +90,21 @@ const AdminPage = () => {
                   </div>
                   <button type="submit" className="lg-btn">ACTIVATE SESSION</button>
                </form>
+               <style>{`
+                .lg-root { height: 100vh; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; font-family: 'Lustria', serif; }
+                .lg-card { width: 100%; max-width: 420px; padding: 40px; border: 1px solid #f0f0f0; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: center; }
+                .lg-brand { font-family: 'PT Sans', sans-serif; font-weight: 900; font-size: 1.1rem; margin-bottom: 40px; }
+                .lg-brand span { color: #fff; background: #ff8a00; padding: 2px 6px; border-radius: 4px; font-size: 0.6rem; margin-left: 6px; }
+                .lg-head h1 { font-family: 'PT Sans', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+                .lg-head p { font-size: 0.9rem; color: #777; margin-bottom: 32px; line-height: 1.5; }
+                .lg-input-wrap { text-align: left; margin-bottom: 24px; }
+                .lg-input-wrap label { font-size: 0.65rem; font-weight: 900; letter-spacing: 1px; color: #aaa; display: block; margin-bottom: 10px; }
+                .lg-input-wrap input { width: 100%; padding: 14px; border: 1.5px solid #eee; border-radius: 12px; font-size: 1rem; outline: none; transition: 0.2s; }
+                .lg-input-wrap input:focus { border-color: #ff8a00; }
+                .lg-btn { width: 100%; padding: 16px; background: #0f172a; color: #fff; border: none; border-radius: 12px; font-weight: 800; cursor: pointer; transition: 0.2s; }
+                .lg-btn:hover { background: #ff8a00; transform: translateY(-1px); }
+             `}</style>
             </div>
-            <style>{`
-               .lg-root { height: 100vh; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; font-family: 'Inter', sans-serif; }
-               .lg-card { width: 100%; max-width: 420px; padding: 40px; border: 1px solid #f0f0f0; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: center; }
-               .lg-brand { font-weight: 900; font-size: 1.1rem; margin-bottom: 40px; }
-               .lg-brand span { color: #fff; background: #000; padding: 2px 6px; border-radius: 4px; font-size: 0.6rem; margin-left: 6px; }
-               .lg-head h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
-               .lg-head p { font-size: 0.9rem; color: #777; margin-bottom: 32px; line-height: 1.5; }
-               .lg-input-wrap { text-align: left; margin-bottom: 24px; }
-               .lg-input-wrap label { font-size: 0.65rem; font-weight: 900; letter-spacing: 1px; color: #aaa; display: block; margin-bottom: 10px; }
-               .lg-input-wrap input { width: 100%; padding: 14px; border: 1.5px solid #eee; border-radius: 12px; font-size: 1rem; outline: none; transition: 0.2s; }
-               .lg-input-wrap input:focus { border-color: #000; }
-               .lg-input-wrap input.error { border-color: #ff4d4d; background: #fff8f8; }
-               .lg-err { color: #ff4d4d; font-size: 0.75rem; font-weight: 700; margin-top: 8px; display: block; }
-               .lg-btn { width: 100%; padding: 16px; background: #000; color: #fff; border: none; border-radius: 12px; font-weight: 800; cursor: pointer; transition: 0.2s; }
-               .lg-btn:hover { background: #333; transform: translateY(-1px); }
-            `}</style>
          </div>
       );
    }
@@ -146,11 +144,11 @@ const AdminPage = () => {
                   <div className="rv-s-lbl">TOTAL LOGS</div>
                </div>
                <div className="rv-s-box">
-                  <div className="rv-s-val">{proposals.filter(p => p.service?.includes('AI')).length}</div>
+                  <div className="rv-s-val" style={{ color: '#ff8a00' }}>{proposals.filter(p => p.service?.includes('AI')).length}</div>
                   <div className="rv-s-lbl">AI UNITS</div>
                </div>
                <div className="rv-s-box">
-                  <div className="rv-s-val">{proposals.filter(p => p.service?.includes('Web')).length}</div>
+                  <div className="rv-s-val" style={{ color: '#ffae42' }}>{proposals.filter(p => p.service?.includes('Web')).length}</div>
                   <div className="rv-s-lbl">WEB NODES</div>
                </div>
             </div>
@@ -182,7 +180,7 @@ const AdminPage = () => {
                                  <div className="rv-email">{p.email}</div>
                               </td>
                               <td className="rv-serv-text">{p.service || 'N/A'}</td>
-                              <td className="rv-budget-text">{p.budget || 'N/A'}</td>
+                              <td className="rv-budget-text" style={{ color: '#ff8a00' }}>{p.budget || 'N/A'}</td>
                               <td className="hide-mob rv-date-text">{new Date(p.created_at).toLocaleDateString()}</td>
                            </tr>
                         ))}
@@ -209,11 +207,11 @@ const AdminPage = () => {
                      <div className="rv-d-grid">
                         <div>
                            <label>SERVICE</label>
-                           <div className="rv-d-tag">{selectedProposal.service || 'General'}</div>
+                           <div className="rv-d-tag" style={{ background: '#ff8a00' }}>{selectedProposal.service || 'General'}</div>
                         </div>
                         <div>
                            <label>BUDGET</label>
-                           <div className="rv-d-tag green">{selectedProposal.budget || 'N/A'}</div>
+                           <div className="rv-d-tag green" style={{ color: '#ff8a00', background: '#fff7ed', borderColor: '#ffedd5' }}>{selectedProposal.budget || 'N/A'}</div>
                         </div>
                      </div>
                      <div className="rv-d-msg-wrap">
@@ -222,23 +220,23 @@ const AdminPage = () => {
                      </div>
                   </div>
                   <div className="rv-d-foot">
-                     <button className="rv-d-btn" onClick={() => window.open(`mailto:${selectedProposal.email}`)}>REPLY VIA EMAIL</button>
+                     <button className="rv-d-btn" style={{ background: '#ff8a00' }} onClick={() => window.open(`mailto:${selectedProposal.email}`)}>REPLY VIA EMAIL</button>
                   </div>
                </div>
             </div>
          )}
 
          <style>{`
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Lustria&family=PT+Sans:wght@400;700;900&display=swap');
             
-            .rv-root { min-height: 100vh; background: #fff; display: flex; color: #111; font-family: 'Inter', sans-serif; flex-direction: row; }
+            .rv-root { min-height: 100vh; background: #fff; display: flex; color: #111; font-family: 'Lustria', serif; flex-direction: row; }
             
             .rv-sidebar { width: 220px; border-right: 1px solid #f0f0f0; padding: 40px 20px; display: flex; flex-direction: column; background: #fff; height: 100vh; position: sticky; top: 0; }
-            .rv-brand { font-weight: 900; font-size: 1rem; margin-bottom: 40px; }
-            .rv-brand span { background: #000; color: #fff; padding: 2px 5px; border-radius: 4px; font-size: 0.55rem; margin-left: 6px; }
+            .rv-brand { font-family: 'PT Sans', sans-serif; font-weight: 900; font-size: 1rem; margin-bottom: 40px; }
+            .rv-brand span { background: #ff8a00; color: #fff; padding: 2px 5px; border-radius: 4px; font-size: 0.55rem; margin-left: 6px; }
             .rv-nav { flex: 1; display: flex; flex-direction: column; gap: 5px; }
             .rv-nav-link { padding: 12px 16px; border-radius: 10px; font-weight: 700; font-size: 0.8rem; color: #777; cursor: pointer; transition: 0.2s; }
-            .rv-nav-link.active { background: #f7f7f7; color: #000; }
+            .rv-nav-link.active { background: #fff7ed; color: #ff8a00; }
             .rv-stat-dot { font-size: 0.6rem; font-weight: 900; color: #ccc; display: flex; align-items: center; gap: 8px; letter-spacing: 1px; }
             .rv-stat-dot .dot { width: 5px; height: 5px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 10px #22c55e; }
 

@@ -126,8 +126,8 @@ const AssistantPage = () => {
                .v10-input { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin-bottom: 15px; outline-color: #0f172a; }
                .v10-btn { width: 100%; padding: 14px; background: #0f172a; color: #fff; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.2s; }
                .v10-btn:hover { opacity: 0.9; }
-               .v10-prime { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
-               .v10-link { background: none; border: none; color: #6366f1; font-weight: 600; font-size: 0.85rem; margin-top: 20px; cursor: pointer; }
+               .v10-prime { background: linear-gradient(90deg, #ff8a00, #ffae42); }
+               .v10-link { background: none; border: none; color: #ff8a00; font-weight: 600; font-size: 0.85rem; margin-top: 20px; cursor: pointer; }
                .otp-look { letter-spacing: 5px; font-weight: 800; text-align: center; }
                @keyframes revealUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
                .animate-enter { animation: revealUp 0.6s ease-out forwards; }
@@ -184,7 +184,7 @@ const AssistantPage = () => {
                         <div className="gpt-msg-container">
                            <div className="gpt-av">
                               {m.role === 'assistant' ? (
-                                 <div className="ai-icon">DX</div>
+                                 <div className="ai-icon"><img src="/favicon.png" style={{ width: '100%', height: '100%', objectFit: 'contain' }} alt="DX" /></div>
                               ) : (
                                  <img src={user?.picture} alt="U" />
                               )}
@@ -199,7 +199,7 @@ const AssistantPage = () => {
                   {isTyping && (
                      <div className="gpt-row assistant">
                         <div className="gpt-msg-container">
-                           <div className="gpt-av"><div className="ai-icon typing">DX</div></div>
+                           <div className="gpt-av"><div className="ai-icon typing"><img src="/favicon.png" style={{ width: '100%', height: '100%', objectFit: 'contain' }} alt="DX" /></div></div>
                            <div className="gpt-content typing">Thinking...</div>
                         </div>
                      </div>
@@ -228,22 +228,23 @@ const AssistantPage = () => {
          </main>
 
          <style>{`
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;700;800&family=JetBrains+Mono:wght@700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Lustria&family=PT+Sans:wght@400;700&display=swap');
             
-            .gpt-root { display: flex; height: 100vh; background: #ffffff; font-family: 'Inter', sans-serif; color: #0f172a; overflow: hidden; position: relative; }
+            .gpt-root { display: flex; height: 100vh; background: #ffffff; font-family: 'Lustria', serif; color: #0f172a; overflow: hidden; position: relative; }
+            h1, h2, h3, h4, h5, h6 { font-family: 'PT Sans', sans-serif; }
             .v10-grid { position: absolute; inset: 0; background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px); background-size: 32px 32px; opacity: 0.4; pointer-events: none; }
             
             /* 📁 SIDEBAR (THEMED) */
-            .gpt-sidebar { width: 260px; height: 100%; background: #f8fafc; border-right: 1.5px solid #f1f5f9; display: flex; flex-direction: column; transition: 0.3s; flex-shrink: 0; z-index: 2000; }
+            .gpt-sidebar { width: 260px; height: 100%; background: #fdfdfb; border-right: 1.5px solid #f1f5f9; display: flex; flex-direction: column; transition: 0.3s; flex-shrink: 0; z-index: 2000; }
             .gpt-sidebar:not(.open) { margin-left: -260px; }
             .gpt-side-header { padding: 20px 15px; display: flex; gap: 10px; }
             .new-chat-btn { flex: 1; height: 44px; background: #fff; border: 1.5px solid #e2e8f0; border-radius: 12px; display: flex; align-items: center; gap: 10px; padding: 0 15px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-            .new-chat-btn:hover { background: #f1f5f9; border-color: #6366f1; }
+            .new-chat-btn:hover { background: #f1f5f9; border-color: #ff8a00; }
             .side-toggle { width: 44px; height: 44px; background: #fff; border: 1.5px solid #e2e8f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #64748b; cursor: pointer; }
             
             .gpt-chat-list { flex: 1; padding: 10px; overflow-y: auto; }
             .chat-item { padding: 12px 15px; border-radius: 10px; font-size: 0.85rem; color: #475569; cursor: pointer; display: flex; align-items: center; gap: 10px; }
-            .chat-item.active { background: #eff6ff; color: #2563eb; font-weight: 700; border: 1px solid #dbeafe; }
+            .chat-item.active { background: #fff7ed; color: #ff8a00; font-weight: 700; border: 1px solid #ffedd5; }
             
             .gpt-side-footer { padding: 20px 15px; border-top: 1.5px solid #f1f5f9; background: #fff; }
             .user-pill { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
@@ -258,7 +259,7 @@ const AssistantPage = () => {
             .gpt-main { flex: 1; display: flex; flex-direction: column; background: transparent; min-width: 0; position: relative; z-index: 1000; }
             .gpt-top-bar { height: 64px; display: flex; align-items: center; padding: 0 25px; border-bottom: 1px solid #f1f5f9; justify-content: space-between; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); }
             .side-open-btn { background: none; border: none; cursor: pointer; color: #64748b; }
-            .model-tag { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.1rem; color: #0f172a; background: linear-gradient(90deg, #6366f1, #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+            .model-tag { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.1rem; color: #0f172a; background: linear-gradient(90deg, #ff8a00, #ffae42); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
             .gpt-scroller { flex: 1; overflow-y: auto; display: flex; flex-direction: column; scroll-behavior: smooth; }
             .gpt-thread { max-width: 780px; width: 100%; margin: 0 auto; padding: 40px 24px; }
@@ -268,7 +269,7 @@ const AssistantPage = () => {
             .gpt-av { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; margin-top: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
             .gpt-av img { width: 100%; height: 100%; }
             
-            .ai-icon { width: 100%; height: 100%; background: #0f172a; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 950; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #6366f1, #d946ef); }
+            .ai-icon { width: 100%; height: 100%; background: #ff8a00; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 950; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #ff8a00, #ffae42); }
             .u-icon { width: 100%; height: 100%; background: #f1f5f9; color: #64748b; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 900; }
 
             .gpt-content { flex: 1; min-width: 0; }
@@ -282,13 +283,13 @@ const AssistantPage = () => {
             /* 🦾 FOOTER THEMED */
             .gpt-footer { padding: 40px 24px 30px 24px; display: flex; flex-direction: column; align-items: center; background: linear-gradient(transparent, #fff 50%); }
             .gpt-input-box { max-width: 780px; width: 100%; position: relative; }
-            .gpt-form { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 12px 14px 12px 28px; display: flex; align-items: center; gap: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: 0.3s; }
-            .gpt-form:focus-within { border-color: #6366f1; box-shadow: 0 15px 50px rgba(99, 102, 241, 0.12); }
+            .gpt-form { background: #fff; border: 1.5px solid #ffedd5; border-radius: 20px; padding: 12px 14px 12px 28px; display: flex; align-items: center; gap: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: 0.3s; }
+            .gpt-form:focus-within { border-color: #ff8a00; box-shadow: 0 15px 50px rgba(255, 138, 0, 0.12); }
             .gpt-form textarea { flex: 1; background: none; border: none; outline: none; font-size: 1.05rem; color: #0f172a; resize: none; min-height: 38px; padding-top: 8px; font-family: inherit; }
-            .gpt-send-btn { width: 44px; height: 44px; background: #0f172a; color: #fff; border: none; border-radius: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; flex-shrink: 0; }
-            .gpt-send-btn:hover { background: #6366f1; transform: scale(1.05); }
+            .gpt-send-btn { width: 44px; height: 44px; background: #ff8a00; color: #fff; border: none; border-radius: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; flex-shrink: 0; }
+            .gpt-send-btn:hover { background: #ffae42; transform: scale(1.05); }
             .gpt-send-btn:disabled { opacity: 0.1; transform: scale(0.9); cursor: not-allowed; }
-            .gpt-disclaimer { margin-top: 15px; font-size: 0.7rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; }
+            .gpt-disclaimer { margin-top: 15px; font-size: 0.7rem; color: #ffae42; font-weight: 600; letter-spacing: 0.5px; }
 
             @media (max-width: 768px) {
                .gpt-sidebar { position: fixed; z-index: 5000; }

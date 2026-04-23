@@ -81,10 +81,8 @@ const AIAssistant = () => {
                      <button className="sidebar-toggle" onClick={() => setSideBarOpen(!sideBarOpen)}>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
                      </button>
-                     <div className="gold-logo-circle">
-                        <svg width="18" height="18" viewBox="0 0 50 50">
-                           <path d="M25 5C13.9 5 5 13.9 5 25C5 29.8 6.7 34.2 9.5 37.7L25 25L40.5 37.7C43.3 34.2 45 29.8 45 25C45 13.9 36.1 5 25 5Z" fill="#fff" />
-                        </svg>
+                     <div className="gold-logo-circle" style={{ overflow: 'hidden' }}>
+                        <img src="/favicon.png" alt="DX" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                      </div>
                      <span className="th-title">Devnexes Solutions</span>
                   </div>
@@ -149,9 +147,9 @@ const AIAssistant = () => {
                display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;
                box-shadow: 0 20px 40px rgba(0,0,0,0.2); border: 2px solid rgba(255,126,179,0.3);
             }
-            .ai-trigger-lux:hover .trigger-inner { background: #ff7eb3; transform: scale(1.1); box-shadow: 0 20px 40px rgba(255,126,179,0.3); border-color: #fff; }
+            .ai-trigger-lux:hover .trigger-inner { background: #ff8a00; transform: scale(1.1); box-shadow: 0 20px 40px rgba(255,138,0,0.3); border-color: #fff; }
             .trigger-pulse { 
-               position: absolute; inset: 0; background: #ff7eb3; border-radius: 50%; z-index: 1; 
+               position: absolute; inset: 0; background: #ff8a00; border-radius: 50%; z-index: 1; 
                animation: trigger-pulse 2s infinite; opacity: 0.5;
             }
             @keyframes trigger-pulse { from { transform: scale(1); opacity: 0.5; } to { transform: scale(1.6); opacity: 0; } }
@@ -162,20 +160,20 @@ const AIAssistant = () => {
                box-shadow: 0 50px 100px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden;
             }
 
-            /* GOLD HEADER (Matches Screenshot) */
+            /* ORANGE HEADER */
             .terminal-header-gold { 
-               background: #3d2b27; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center;
+               background: #ff8a00; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center;
                border-top-left-radius: 12px; border-top-right-radius: 12px;
             }
             .th-left-gold { display: flex; align-items: center; gap: 12px; }
             .sidebar-toggle { background: none; border: none; color: #fff; opacity: 0.7; cursor: pointer; padding: 0; display: flex; }
-            .gold-logo-circle { width: 28px; height: 28px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+            .gold-logo-circle { width: 28px; height: 28px; background: rgba(255,255,255,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
             .th-title { color: #fff; font-size: 0.95rem; font-weight: 500; font-family: sans-serif; }
             .th-close-gold { background: none; border: none; color: #fff; font-size: 1.6rem; cursor: pointer; opacity: 0.6; line-height: 1; }
 
             /* SIDEBAR */
             .terminal-sidebar { 
-               position: absolute; left: 0; top: 52px; bottom: 0; width: 220px; background: #f8f8fb;
+               position: absolute; left: 0; top: 52px; bottom: 0; width: 220px; background: #fffaf8;
                border-right: 1px solid #e2e8f0; transform: translateX(-100%); transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
                z-index: 10; display: flex; flex-direction: column;
             }
@@ -184,7 +182,7 @@ const AIAssistant = () => {
             .sidebar-title { font-size: 0.65rem; font-weight: 900; color: #94a3b8; letter-spacing: 2px; }
             .sidebar-content { flex: 1; padding: 15px 10px; }
             .sidebar-item { padding: 12px 15px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; color: #4b4b66; cursor: pointer; margin-bottom: 5px; }
-            .sidebar-item.active { background: #fff; color: #3d2b27; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+            .sidebar-item.active { background: #fff; color: #ff8a00; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
             .sidebar-footer { padding: 20px; border-top: 1px solid #e2e8f0; background: #fff; }
             
             .google-login-btn { 
@@ -192,48 +190,48 @@ const AIAssistant = () => {
                padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff;
                font-size: 0.75rem; font-weight: 700; color: #1a1a2e; cursor: pointer; transition: 0.2s;
             }
-            .google-login-btn:hover { background: #f8fafc; border-color: #cbd5e1; }
+            .google-login-btn:hover { background: #f8fafc; border-color: #ff8a00; }
 
             .user-profile { display: flex; align-items: center; gap: 12px; }
-            .user-avatar { width: 32px; height: 32px; background: #3d2b27; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; }
+            .user-avatar { width: 32px; height: 32px; background: #ff8a00; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; }
             .u-name { font-size: 0.8rem; font-weight: 700; color: #1a1a2e; margin: 0; }
             .logout-link { background: none; border: none; font-size: 0.65rem; color: #ef4444; font-weight: 800; cursor: pointer; padding: 0; text-decoration: underline; }
 
             /* LOGIN OVERLAY */
-            .login-overlay { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px; background: #f8fafc; }
+            .login-overlay { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px; background: #fffaf8; }
             .login-box { text-align: center; }
             .login-icon { font-size: 3rem; margin-bottom: 20px; }
             .login-box h3 { font-size: 1.2rem; font-weight: 750; color: #1a1a2e; margin-bottom: 10px; }
             .login-box p { font-size: 0.85rem; color: #64748b; margin-bottom: 25px; line-height: 1.6; }
             .login-cta { 
-               background: #3d2b27; color: #fff; padding: 14px 28px; border: none; border-radius: 8px;
+               background: #ff8a00; color: #fff; padding: 14px 28px; border: none; border-radius: 8px;
                font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: 0.3s;
             }
-            .login-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(61,43,39,0.3); }
+            .login-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,138,0,0.3); }
 
             /* CHAT BODY */
             .terminal-body { flex: 1; padding: 25px; overflow-y: auto; display: flex; flex-direction: column; gap: 20px; scroll-behavior: smooth; position: relative; }
             .terminal-body::after { 
                content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
                width: 250px; height: 250px; opacity: 0.03; pointer-events: none;
-               background: url('data:image/svg+xml;utf8,<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M25 5C13.9 5 5 13.9 5 25C5 29.8 6.7 34.2 9.5 37.7L25 25L40.5 37.7C43.3 34.2 45 29.8 45 25C45 13.9 36.1 5 25 5Z" fill="black"/></svg>') center/contain no-repeat;
+               background: url('data:image/svg+xml;utf8,<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M25 5C13.9 5 5 13.9 5 25C5 29.8 6.7 34.2 9.5 37.7L25 25L40.5 37.7C43.3 34.2 45 29.8 45 25C45 13.9 36.1 5 25 5Z" fill="orange"/></svg>') center/contain no-repeat;
             }
             
             .msg-label { font-family: monospace; font-size: 0.5rem; font-weight: 950; color: #94a3b8; display: block; margin-bottom: 5px; opacity: 0.8; }
             .msg-bubble { padding: 12px 18px; border-radius: 4px; font-size: 0.85rem; line-height: 1.5; max-width: 85%; }
-            .ai-msg .msg-bubble { background: #f0f2f5; color: #1a1a2e; border: 1.5px solid #e1e4e8; }
+            .ai-msg .msg-bubble { background: #fffcf0; color: #1a1a2e; border: 1.5px solid #ffae4233; }
             .user-msg { align-self: flex-end; }
             .user-msg .msg-label { text-align: right; }
-            .user-msg .msg-bubble { background: #3d2b27; color: #fff; font-weight: 700; }
+            .user-msg .msg-bubble { background: #ff8a00; color: #fff; font-weight: 700; }
 
             .terminal-input-wrap { padding: 20px; border-top: 1.5px solid #f2f2f5; display: flex; gap: 10px; background: #fff; }
             .ti-field { 
-               flex: 1; background: #f8fafc; border: 1.5px solid #e2e8f0; padding: 15px 20px; 
+               flex: 1; background: #fdfdf8; border: 1.5px solid #e2e8f0; padding: 15px 20px; 
                font-size: 0.8rem; font-weight: 600; outline: none; transition: 0.3s; border-radius: 8px;
             }
-            .ti-field:focus { border-color: #3d2b27; background: #fff; }
+            .ti-field:focus { border-color: #ff8a00; background: #fff; }
             .ti-submit { 
-               background: #3d2b27; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; 
+               background: #ff8a00; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; 
                color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s;
             }
             .ti-submit:hover { transform: scale(1.05); }

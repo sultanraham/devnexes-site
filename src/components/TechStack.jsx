@@ -35,14 +35,14 @@ export default function TechStack() {
   const [activeTab, setActiveTab] = useState('Backend')
   const primaryNavy = '#1a1a2e'
   const textGray = '#5e5e77'
-  const magentaTheme = '#b03673'
+  const magentaTheme = '#ff8a00'
 
   return (
     <section id="tech-stack" style={{ background: '#ffffff', padding: '120px 0' }}>
 
       {/* 🏷️ SECTION HEADER */}
       <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-        <div style={{ width: 60, height: 4, background: 'linear-gradient(90deg, #ff7eb3 0%, #3d1fc2 100%)', margin: '0 auto 25px auto', borderRadius: 2 }} />
+        <div style={{ width: 60, height: 4, background: 'linear-gradient(90deg, #ff8a00 0%, #ffae42 100%)', margin: '0 auto 25px auto', borderRadius: 2 }} />
         <h4 style={{ fontSize: '1.8rem', fontWeight: 300, color: textGray, marginBottom: '0.8rem' }}>
           Our
         </h4>
@@ -92,40 +92,39 @@ export default function TechStack() {
       <div style={{
         maxWidth: 1200,
         margin: '0 auto',
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-        gap: '80px 100px',
-        padding: '0 40px'
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
+        gap: '60px 40px',
+        padding: '0 40px',
+        justifyItems: 'center'
       }}>
-        {stackData[activeTab]?.map((tech, i) => (
-          <div key={i} style={{
-            width: '120px',
-            height: '80px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: '0.4s',
-            opacity: 0.9
-          }}>
-            <img
-              src={tech.img}
-              alt={tech.name}
-              title={tech.name}
-              style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                objectFit: 'contain',
-                filter: 'grayscale(0.1)',
-                transition: '0.3s'
-              }}
-            />
-          </div>
-        )) || (
-            <div style={{ color: textGray, opacity: 0.6, fontSize: '1.2rem', fontStyle: 'italic' }}>
-              Coming soon for {activeTab}...
+        {stackData[activeTab]?.map((tech) => (
+          <div
+            key={tech.name}
+            className="dx-card-container"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '20px',
+              transition: '0.4s',
+              cursor: 'default'
+            }}
+          >
+            <div className="dx-logo-box" style={{ width: 65, height: 65 }}>
+              <img
+                src={tech.img}
+                alt={tech.name}
+                style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'grayscale(0%) brightness(1)' }}
+                onMouseEnter={e => e.target.style.transform = 'scale(1.15) translateY(-5px)'}
+                onMouseLeave={e => e.target.style.transform = 'scale(1) translateY(0)'}
+              />
             </div>
-          )}
+            <span style={{ fontSize: '1rem', fontWeight: 700, color: '#334155' }}>
+              {tech.name}
+            </span>
+          </div>
+        ))}
       </div>
 
     </section>

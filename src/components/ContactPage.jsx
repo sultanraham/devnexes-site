@@ -65,14 +65,20 @@ const ContactPage = () => {
                      {/* RIGHT: QUICK CONTACT CARD */}
                      <div className="v123-hero-right animate-fade-in" style={{ animationDelay: '0.3s' }}>
                         <div className="v123-quick-card">
-                           <div className="v123-qc-top">
-                              <div className="v123-qc-avatar">DN</div>
-                              <div>
-                                 <div className="v123-qc-name">Devnexes Team</div>
-                                 <div className="v123-qc-role">Engineering & Design</div>
-                              </div>
-                              <div className="v123-online-badge">● Online</div>
-                           </div>
+                            <div className="v123-qc-top">
+                               <div className="v123-qc-avatar" style={{ 
+                                  width: '52px', height: '52px', background: '#fff', borderRadius: '12px', 
+                                  display: 'flex', alignItems: 'center', justifyContent: 'center', 
+                                  padding: '8px', border: '1.5px solid #f1f5f9' 
+                               }}>
+                                  <img src="/favicon.png" alt="DX" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                               </div>
+                               <div>
+                                  <div className="v123-qc-name">Devnexes Team</div>
+                                  <div className="v123-qc-role">Executive Engineering</div>
+                               </div>
+                               <div className="v123-online-badge">● Live</div>
+                            </div>
 
                            <div className="v123-qc-divider" />
 
@@ -80,8 +86,17 @@ const ContactPage = () => {
                               <div className="v123-qc-item">
                                  <span className="v123-qc-icon">✉</span>
                                  <div>
-                                    <div className="v123-qc-label">Email us</div>
-                                    <a href="mailto:Devnexes.Solutions@gmail.com" className="v123-qc-value">Devnexes.Solutions@gmail.com</a>
+                                    <div className="v123-qc-label">Primary HQ</div>
+                                    <a href="mailto:rahamq23@gmail.com" className="v123-qc-value">rahamq23@gmail.com</a>
+                                 </div>
+                              </div>
+                              <div className="v123-qc-item">
+                                 <span className="v123-qc-icon">🌐</span>
+                                 <div>
+                                    <div className="v123-qc-label">Executive Office</div>
+                                    <a href="mailto:ceo@devnexes.site" className="v123-qc-value" style={{ display: 'block' }}>ceo@devnexes.site</a>
+                                    <a href="mailto:cto@devnexes.site" className="v123-qc-value" style={{ display: 'block', fontSize: '0.75rem', opacity: 0.8 }}>cto@devnexes.site</a>
+                                    <a href="mailto:coo@devnexes.site" className="v123-qc-value" style={{ display: 'block', fontSize: '0.75rem', opacity: 0.8 }}>coo@devnexes.site</a>
                                  </div>
                               </div>
                               <div className="v123-qc-item">
@@ -213,17 +228,16 @@ const ContactPage = () => {
          <Footer />
 
          <style>{`
-            @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@800&display=swap');
-            
-            .contact-root { background: #fff; min-height: 100vh; font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; overflow-x: hidden; }
+            .contact-root { background: #fff; min-height: 100vh; font-family: 'Lustria', serif; color: #1e293b; overflow-x: hidden; }
+            h1, h2, h3, .v123-h1 { font-family: 'PT Sans', sans-serif; }
             .c-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
             
             /* 🌌 V123 ATMOSPHERE */
             .v123-grid-overlay { position: absolute; inset: 0; background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 32px 32px; z-index: -1; opacity: 0.6; }
             .neural-glow { position: absolute; width: 60vw; height: 60vw; border-radius: 50%; filter: blur(120px); opacity: 0.12; z-index: -1; pointer-events: none; }
-            .indigo-glow { top: -20%; left: -10%; background: #a855f7; }
-            .magenta-glow { bottom: -10%; right: -20%; background: #ec4899; }
-
+            .indigo-glow { top: -20%; left: -10%; background: #ff8a00; }
+            .magenta-glow { bottom: -10%; right: -20%; background: #ffae42; }
+ 
             /* 🚀 HERO V123 */
             .contact-hero { padding: 120px 0 40px; }
             .v123-hero-flex { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
@@ -235,12 +249,12 @@ const ContactPage = () => {
             .v123-meta-txt { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 800; color: #94a3b8; letter-spacing: 2px; }
             .v123-h1 { font-size: 3.2rem; font-weight: 800; color: #0f172a; line-height: 1.1; letter-spacing: -2px; margin-bottom: 16px; }
             .v123-p { font-size: 1rem; color: #64748b; max-width: 580px; line-height: 1.6; }
-            .gradient-text { background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
+            .gradient-text { background: linear-gradient(135deg, #ff8a00 0%, #ffae42 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+ 
             /* 🃏 QUICK CONTACT CARD */
             .v123-quick-card { background: #fff; border: 1.8px solid #f1f5f9; border-radius: 28px; padding: 28px; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.04); }
             .v123-qc-top { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-            .v123-qc-avatar { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #a855f7, #ec4899); color: #fff; font-weight: 900; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+            .v123-qc-avatar { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #ff8a00, #ffae42); color: #fff; font-weight: 900; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
             .v123-qc-name { font-size: 0.95rem; font-weight: 800; color: #0f172a; }
             .v123-qc-role { font-size: 0.75rem; color: #94a3b8; font-weight: 600; margin-top: 2px; }
             .v123-online-badge { margin-left: auto; font-size: 0.7rem; font-weight: 700; color: #22c55e; background: #f0fdf4; padding: 5px 12px; border-radius: 50px; border: 1px solid #bbf7d0; white-space: nowrap; }
@@ -250,17 +264,17 @@ const ContactPage = () => {
             .v123-qc-icon { font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
             .v123-qc-label { font-size: 0.68rem; font-weight: 700; color: #94a3b8; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
             .v123-qc-value { font-size: 0.88rem; font-weight: 700; color: #0f172a; text-decoration: none; word-break: break-all; }
-            .v123-qc-value:hover { color: #a855f7; }
+            .v123-qc-value:hover { color: #ff8a00; }
             .v123-qc-footer { display: flex; justify-content: space-between; padding-top: 18px; border-top: 1.5px solid #f1f5f9; }
             .v123-qc-stat { text-align: center; font-size: 0.7rem; font-weight: 700; color: #94a3b8; }
             .v123-qc-stat span { display: block; font-size: 1.2rem; font-weight: 900; color: #0f172a; margin-bottom: 2px; }
-            .v123-qc-glow { position: absolute; bottom: -40px; right: -40px; width: 150px; height: 150px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 50%; filter: blur(60px); opacity: 0.08; pointer-events: none; }
-
+            .v123-qc-glow { position: absolute; bottom: -40px; right: -40px; width: 150px; height: 150px; background: linear-gradient(135deg, #ff8a00, #ffae42); border-radius: 50%; filter: blur(60px); opacity: 0.08; pointer-events: none; }
+ 
             /* 📡 MAIN GRID V123 */
             .v123-main-grid { display: flex; justify-content: center; padding-bottom: 80px; }
             .v123-form-col { width: 100%; max-width: 780px; }
             .v123-info-col { flex: 1; min-width: 0; }
-
+ 
             /* 📝 THE VAULT (FORM) */
             .v123-glass-vault { background: #fff; border: 1.8px solid #f1f5f9; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.02); }
             .v123-vault-header { padding: 20px 30px; background: #fafafa; border-bottom: 1.5px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
@@ -273,17 +287,17 @@ const ContactPage = () => {
             .v123-field { position: relative; display: flex; flex-direction: column; gap: 8px; }
             .v123-field label { font-size: 0.78rem; font-weight: 700; color: #475569; letter-spacing: 0; }
             .v123-field input, .v123-field select, .v123-field textarea { background: #f8fafc; border: 1.5px solid #f1f5f9; padding: 13px 16px; border-radius: 12px; font-family: inherit; font-size: 0.9rem; color: #0f172a; outline: none; transition: 0.3s; position: relative; z-index: 2; }
-            .v123-field input:focus, .v123-field select:focus, .v123-field textarea:focus { border-color: #a855f7; background: #fff; }
-            .v123-field-glow { position: absolute; inset: -5px; z-index: 1; border-radius: 16px; background: linear-gradient(135deg, #a855f7, #ec4899); opacity: 0; filter: blur(15px); transition: 0.4s; }
+            .v123-field input:focus, .v123-field select:focus, .v123-field textarea:focus { border-color: #ff8a00; background: #fff; }
+            .v123-field-glow { position: absolute; inset: -5px; z-index: 1; border-radius: 16px; background: linear-gradient(135deg, #ff8a00, #ffae42); opacity: 0; filter: blur(15px); transition: 0.4s; }
             .v123-field input:focus ~ .v123-field-glow, .v123-field select:focus ~ .v123-field-glow, .v123-field textarea:focus ~ .v123-field-glow { opacity: 0.1; }
             .v123-field.full-width { grid-column: 1 / span 2; }
-
+ 
             .v123-submit-btn { width: 100%; padding: 18px; background: #000; color: #fff; border: none; border-radius: 14px; font-weight: 900; font-size: 1rem; letter-spacing: 1.5px; cursor: pointer; transition: 0.4s; position: relative; overflow: hidden; }
-            .v123-submit-btn:hover { background: linear-gradient(135deg, #a855f7, #ec4899); transform: translateY(-5px); box-shadow: 0 30px 60px rgba(168,85,247,0.2); }
+            .v123-submit-btn:hover { background: linear-gradient(135deg, #ff8a00, #ffae42); transform: translateY(-5px); box-shadow: 0 30px 60px rgba(255, 138, 0, 0.2); }
             .v123-loading-wrap { display: flex; align-items: center; justify-content: center; gap: 12px; }
             .v123-spinner { width: 18px; height: 18px; border: 3px solid rgba(255,255,255,0.2); border-top-color: #fff; border-radius: 50%; animation: v-spin 0.8s linear infinite; }
             @keyframes v-spin { to { transform: rotate(360deg); } }
-
+ 
             /* 🏆 INFO STACK V123 */
             .v123-info-stack { display: flex; flex-direction: column; gap: 20px; }
             .v123-info-block { padding: 25px; border-radius: 20px; border: 1.5px solid #f1f5f9; background: #fff; }
@@ -293,7 +307,7 @@ const ContactPage = () => {
             .v123-info-item:last-child { margin-bottom: 0; }
             .v123-lbl { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: #94a3b8; margin-bottom: 5px; font-weight: 800; letter-spacing: 1.5px; }
             .v123-val { font-size: 0.95rem; font-weight: 800; color: inherit; text-decoration: none; word-break: break-all; }
-            .v123-val:hover { color: #a855f7; }
+            .v123-val:hover { color: #ff8a00; }
 
             .v123-board-status { display: flex; flex-direction: column; gap: 10px; }
             .v123-status-row { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 700; color: #94a3b8; }

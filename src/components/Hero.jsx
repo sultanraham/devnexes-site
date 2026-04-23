@@ -3,7 +3,7 @@ import cubeImg from '../assets/cube.png'
 
 export default function Hero() {
   const navyColor = '#1a1a2e'
-  const purpleHighlight = '#b06ab3'
+  const purpleHighlight = '#ff8a00'
 
   // Dedicated High-Performance Parallax Engine specific to Hero visual elements
   const [scrollY, setScrollY] = useState(0)
@@ -18,7 +18,7 @@ export default function Hero() {
   }, [])
 
   const btnStyle = {
-    background: 'linear-gradient(135deg, #a855f7 0%, #4f46e5 100%)',
+    background: 'linear-gradient(135deg, #ff8a00 0%, #ff6b00 100%)',
     color: '#fff',
     fontSize: '0.95rem',
     fontWeight: 600,
@@ -26,7 +26,7 @@ export default function Hero() {
     borderRadius: 10,
     border: 'none',
     cursor: 'pointer',
-    boxShadow: '0 8px 30px rgba(168, 85, 247, 0.35)',
+    boxShadow: '0 8px 30px rgba(255, 138, 0, 0.35)',
     transition: 'box-shadow 0.2s, background 0.2s'
   }
 
@@ -49,14 +49,15 @@ export default function Hero() {
             <h1 style={{
               lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.03em', 
               fontSize: 'clamp(2.4rem, 8vw, 4.2rem)',
-              transform: `translateY(${scrollY * 0.15}px)`
+              transform: `translateY(${scrollY * 0.15}px)`,
+              fontFamily: "'PT Sans', sans-serif"
             }}>
-              <span style={{ fontWeight: 300, color: navyColor }}>Great </span>
-              <span style={{ fontWeight: 600, color: purpleHighlight }}>Product</span>
-              <span style={{ fontWeight: 300, color: navyColor }}> is</span>
+              <span style={{ fontWeight: 300, color: '#475569' }}>Great </span>
+              <span style={{ fontWeight: 700, color: '#ff8a00' }}>Product</span>
+              <span style={{ fontWeight: 300, color: '#475569' }}> is</span>
               <br />
-              <span style={{ fontWeight: 800, color: navyColor }}>built by great </span>
-              <span style={{ fontWeight: 600, color: purpleHighlight }}>teams</span>
+              <span style={{ fontWeight: 800, color: '#0f172a' }}>built by great </span>
+              <span style={{ fontWeight: 700, color: '#ff8a00' }}>teams</span>
             </h1>
 
             <p style={{
@@ -75,8 +76,8 @@ export default function Hero() {
                 transform: `translateY(${scrollY * 0.05}px)`
               }}
               onClick={() => window.location.href = '/contact'}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(168, 85, 247, 0.45)' }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(168, 85, 247, 0.35)' }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(255, 138, 0, 0.45)' }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(255, 138, 0, 0.35)' }}
             >
               Let's get started!
             </button>
@@ -94,7 +95,7 @@ export default function Hero() {
             >
               <div className="floating-img-container">
                 <img
-                  src={cubeImg}
+                  src="/assets/advanced_hero.png"
                   alt="Devnexes Hero Visual"
                   style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                 />

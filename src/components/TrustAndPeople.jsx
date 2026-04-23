@@ -10,11 +10,11 @@ export default function TrustAndPeople() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
   
-  const magentaGradient = 'linear-gradient(135deg, #ff7eb3 0%, #3d1fc2 100%)'
+  const magentaGradient = 'linear-gradient(135deg, #ff8a00 0%, #ffae42 100%)'
   const primaryNavy = '#1a1a2e'
   const textBody = '#5e5e77'
-  const accentMagenta = '#b03673'
-  const purpleTheme = '#5a21b3'
+  const accentMagenta = '#ff8a00'
+  const purpleTheme = '#cc6e00'
 
   return (
     <section 
@@ -38,7 +38,7 @@ export default function TrustAndPeople() {
           <p style={{ fontSize: '1.05rem', color: textBody, lineHeight: 1.8, marginBottom: '2.5rem' }}>
             We <span style={{ color: accentMagenta, fontWeight: 500 }}>add development capacity</span> to tech teams. Our value isn't limited to building teams but is equally distributed across the project lifecycle.
           </p>
-          <a href="/services" style={{ display: 'flex', alignItems: 'center', justifyContent: isMobile ? 'center' : 'flex-start', gap: '0.8rem', color: '#6366f1', fontWeight: 600, textDecoration: 'none' }}>
+          <a href="/services" style={{ display: 'flex', alignItems: 'center', justifyContent: isMobile ? 'center' : 'flex-start', gap: '0.8rem', color: '#ff6b00', fontWeight: 600, textDecoration: 'none' }}>
             See more Information
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
           </a>
@@ -94,44 +94,44 @@ export default function TrustAndPeople() {
 
           {/* Slot 2 — Muhammad Arham */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ width: 110, height: 110, borderRadius: '50%', overflow: 'hidden', border: '3px solid #e9d5ff', boxShadow: '0 8px 24px rgba(168,85,247,0.15)' }}>
+            <div style={{ width: 110, height: 110, borderRadius: '50%', overflow: 'hidden', border: '3px solid #ffcc80', boxShadow: '0 8px 24px rgba(255,138,0,0.15)' }}>
               <img src="/assets/arham.jpeg" alt="Muhammad Arham" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                onError={e => { e.target.style.display='none'; e.target.parentNode.innerHTML=`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#a855f7,#4f46e5);font-size:1.5rem;font-weight:800;color:#fff;border-radius:50%">MA</div>`; }} />
+                onError={e => { e.target.style.display='none'; e.target.parentNode.innerHTML=`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ff8a00,#ffae42);font-size:1.5rem;font-weight:800;color:#fff;border-radius:50%">MA</div>`; }} />
             </div>
             <p style={{ fontWeight: 700, color: '#1a1a2e', fontSize: '0.9rem', margin: 0, textAlign: 'center' }}>Muhammad Arham</p>
-            <p style={{ fontSize: '0.75rem', color: '#7c3aed', fontWeight: 600, margin: 0 }}>COO</p>
+            <p style={{ fontSize: '0.75rem', color: '#ff6b00', fontWeight: 600, margin: 0 }}>COO</p>
           </div>
 
           {/* Slot 3 — Founder (Featured Center) */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ width: 124, height: 124, borderRadius: '50%', padding: '3px', background: 'linear-gradient(135deg,#ff7eb3,#3d1fc2)', boxShadow: '0 10px 30px rgba(168,85,247,0.3)' }}>
+            <div style={{ width: 124, height: 124, borderRadius: '50%', padding: '3px', background: 'linear-gradient(135deg,#ff8a00,#ff6b00)', boxShadow: '0 10px 30px rgba(255,138,0,0.3)' }}>
               <div style={{ width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', background: '#fff' }}>
-                <img src="/assets/founder.jpg" alt="Founder" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                <img src="/Untitled design.png" alt="Founder" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={e => { e.target.src='https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=200'; }} />
               </div>
             </div>
             <p style={{ fontWeight: 800, color: '#1a1a2e', fontSize: '0.95rem', margin: 0, textAlign: 'center' }}>Muhammad Raham</p>
-            <p style={{ fontSize: '0.75rem', color: '#7c3aed', fontWeight: 600, margin: 0 }}>CEO & Founder</p>
+            <p style={{ fontSize: '0.75rem', color: '#ff6b00', fontWeight: 600, margin: 0 }}>CEO & Founder</p>
           </div>
 
           {/* Slot 4 — Muhammad Huzaifa */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ width: 110, height: 110, borderRadius: '50%', overflow: 'hidden', border: '3px solid #e9d5ff', boxShadow: '0 8px 24px rgba(168,85,247,0.15)' }}>
+            <div style={{ width: 110, height: 110, borderRadius: '50%', overflow: 'hidden', border: '3px solid #ffcc80', boxShadow: '0 8px 24px rgba(255,138,0,0.15)' }}>
               <img src="/assets/huzaifa.jpeg" alt="Muhammad Huzaifa" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                onError={e => { e.target.style.display='none'; e.target.parentNode.innerHTML=`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#a855f7,#4f46e5);font-size:1.5rem;font-weight:800;color:#fff;border-radius:50%">MH</div>`; }} />
+                onError={e => { e.target.style.display='none'; e.target.parentNode.innerHTML=`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ff8a00,#ff6b00);font-size:1.5rem;font-weight:800;color:#fff;border-radius:50%">MH</div>`; }} />
             </div>
             <p style={{ fontWeight: 700, color: '#1a1a2e', fontSize: '0.9rem', margin: 0, textAlign: 'center' }}>Muhammad Huzaifa</p>
-            <p style={{ fontSize: '0.75rem', color: '#7c3aed', fontWeight: 600, margin: 0 }}>CTO</p>
+            <p style={{ fontSize: '0.75rem', color: '#ff6b00', fontWeight: 600, margin: 0 }}>CTO</p>
           </div>
 
           {/* Slot 5 — Huzaifa Mushtaq */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ width: 110, height: 110, borderRadius: '50%', overflow: 'hidden', border: '3px solid #e9d5ff', boxShadow: '0 8px 24px rgba(168,85,247,0.15)' }}>
+            <div style={{ width: 110, height: 110, borderRadius: '50%', overflow: 'hidden', border: '3px solid #ffcc80', boxShadow: '0 8px 24px rgba(255,138,0,0.15)' }}>
               <img src="/assets/huzaifa_mushtaq.jpeg" alt="Huzaifa Mushtaq" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(2.0)', objectPosition: 'center 20%' }}
-                onError={e => { e.target.style.display='none'; e.target.parentNode.innerHTML=`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#a855f7,#4f46e5);font-size:1.5rem;font-weight:800;color:#fff;border-radius:50%">HM</div>`; }} />
+                onError={e => { e.target.style.display='none'; e.target.parentNode.innerHTML=`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ff8a00,#ff6b00);font-size:1.5rem;font-weight:800;color:#fff;border-radius:50%">HM</div>`; }} />
             </div>
             <p style={{ fontWeight: 700, color: '#1a1a2e', fontSize: '0.9rem', margin: 0, textAlign: 'center' }}>Huzaifa Mushtaq</p>
-            <p style={{ fontSize: '0.75rem', color: '#7c3aed', fontWeight: 600, margin: 0 }}>Team Lead</p>
+            <p style={{ fontSize: '0.75rem', color: '#ff6b00', fontWeight: 600, margin: 0 }}>Team Lead</p>
           </div>
 
         </div>

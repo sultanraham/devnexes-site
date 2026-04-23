@@ -4,37 +4,37 @@ const steps = [
   {
     id: 1,
     title: 'Build the right team to scale',
-    desc: 'Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers).',
-    subDesc: 'Our <span style="color: #b03673; font-weight: 700;">delivery model</span> helps you cut costs and deliver within budget.',
+    desc: 'Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term.',
+    subDesc: 'Our <span style="color: #ff8a00; font-weight: 700;">delivery model</span> helps you cut costs and deliver within budget.',
     quote: '"Building a core team that shares your vision is the foundation of any successful digital transformation for our clients."',
     author: 'Muhammad Raham',
     role: 'CEO & Founder',
-    authorImg: '/assets/founder.jpg',
-    localImg: '/assets/way1.png',
+    authorImg: '/Untitled design.png',
+    localImg: '/devnex_team.png',
     align: 'right'
   },
   {
     id: 2,
     title: 'Precision in Development',
     desc: 'We follow a structured agile methodology to ensure every line of code serves a purpose. High-scale architectures require high-scale thinking and meticulous execution.',
-    subDesc: 'Our <span style="color: #b03673; font-weight: 700;">agile model</span> ensures transparency and rapid iteration cycles.',
+    subDesc: 'Our <span style="color: #ff8a00; font-weight: 700;">agile model</span> ensures transparency and rapid iteration cycles.',
     quote: '"Technological excellence is not about using the flashiest tools, but about building robust, scalable architectures that last."',
     author: 'Muhammad Huzaifa',
     role: 'CTO',
     authorImg: '/assets/huzaifa.jpeg',
-    localImg: '/assets/way2.png',
+    localImg: '/devnex_code.png',
     align: 'left'
   },
   {
     id: 3,
     title: 'Scaling for Growth',
     desc: 'Software shouldn’t just work; it should grow with you. We build scalable foundations that allow your product to handle millions of requests without breaking a sweat.',
-    subDesc: 'Our <span style="color: #b03673; font-weight: 700;">growth framework</span> is built for enterprise-grade performance.',
+    subDesc: 'Our <span style="color: #ff8a00; font-weight: 700;">growth framework</span> is built for enterprise-grade performance.',
     quote: '"Operational efficiency is the bridge between a great idea and a worldwide product. We ensure everything runs perfectly at scale."',
     author: 'Muhammad Arham',
     role: 'COO',
     authorImg: '/assets/arham.jpeg',
-    localImg: '/assets/way3.png',
+    localImg: '/devnex_cloud.png',
     align: 'right'
   }
 ]
@@ -71,12 +71,16 @@ export default function WayOfBuilding() {
       
       {/* 🏷️ SECTION HEADER */}
       <div style={{ textAlign: 'center', marginBottom: '100px' }}>
-        <div style={{ width: 60, height: 4, background: 'linear-gradient(90deg, #ff7eb3 0%, #3d1fc2 100%)', margin: '0 auto 25px auto', borderRadius: 2 }} />
-        <h4 style={{ fontSize: '1.8rem', fontWeight: 300, color: textGray, marginBottom: '0.8rem' }}>
+        <div style={{ width: 60, height: 4, background: 'linear-gradient(90deg, #ff8a00 0%, #ffae42 100%)', margin: '0 auto 30px auto', borderRadius: 2 }} />
+        <span style={{
+          fontSize: '0.85rem', fontWeight: 800, color: textGray,
+          letterSpacing: '5px', textTransform: 'uppercase', display: 'block',
+          marginBottom: '10px', opacity: 0.8
+        }}>
           Way of building
-        </h4>
-        <h2 style={{ fontSize: '3.2rem', fontWeight: 800, color: primaryNavy }}>
-          Great Software
+        </span>
+        <h2 style={{ fontSize: '3.8rem', fontWeight: 900, color: primaryNavy, letterSpacing: '-2px', lineHeight: 1.1, margin: 0 }}>
+          Great <span style={{ color: '#ff8a00' }}>Software.</span>
         </h2>
       </div>
 
@@ -97,12 +101,12 @@ export default function WayOfBuilding() {
               
               {/* Quote Wrapper */}
               <div style={{ 
-                borderLeft: `4px solid #b03673`, 
+                borderLeft: `4px solid #ff8a00`, 
                 paddingLeft: '30px', 
                 marginBottom: '1rem',
                 position: 'relative'
               }}>
-                <p style={{ fontSize: '1.1rem', fontStyle: 'italic', color: '#b03673', lineHeight: 1.8, marginBottom: '1.5rem', fontWeight: 300 }}>
+                <p style={{ fontSize: '1.1rem', fontStyle: 'italic', color: '#ff8a00', lineHeight: 1.8, marginBottom: '1.5rem', fontWeight: 300 }}>
                   {step.quote}
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
@@ -126,17 +130,18 @@ export default function WayOfBuilding() {
               
               <div style={{ 
                 position: 'absolute', bottom: -25, left: '50%', transform: 'translateX(-50%)',
-                width: 45, height: 45, borderRadius: '50%', background: '#b03673', zIndex: 2, boxShadow: '0 5px 15px rgba(176, 54, 115, 0.3)'
+                width: 45, height: 45, borderRadius: '50%', background: '#ff8a00', zIndex: 2, boxShadow: '0 5px 15px rgba(255, 138, 0, 0.3)'
               }} />
 
               <div style={{ 
                 position: 'absolute', top: -15, right: step.align === 'right' ? -15 : 'auto', left: step.align === 'left' ? -15 : 'auto',
-                width: 35, height: 35, borderRadius: '50%', background: 'linear-gradient(90deg, #ff7eb3 0%, #3d1fc2 100%)', zIndex: 2 
+                width: 35, height: 35, borderRadius: '50%', background: 'linear-gradient(90deg, #ff8a00 0%, #ffae42 100%)', zIndex: 2 
               }} />
 
               {/* Main Image Frame */}
-              <div className="way-img-frame" style={{ boxShadow: '0 50px 100px rgba(0,0,0,0.12)' }}>
-                <img src={step.localImg} alt={step.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="way-img-frame" style={{ boxShadow: '0 40px 100px rgba(0,0,0,0.10)' }}>
+                <img src={step.localImg} alt={step.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(255,138,0,0.08) 0%, transparent 60%)', pointerEvents: 'none' }} />
               </div>
               
             </div>

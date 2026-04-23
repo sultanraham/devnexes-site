@@ -4,53 +4,53 @@ const services = [
    {
       id: 1,
       icon: (
-         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff8a00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
             <line x1="12" y1="18" x2="12.01" y2="18"></line>
          </svg>
       ),
-      iconBg: '#f0f7ff',
-      iconBorder: '#dbeafe',
+      iconBg: '#fff7ed',
+      iconBorder: '#ffedd5',
       title: 'Mobile App Development',
       desc: 'A Website is an extension of yourself and we can help you to express it properly.'
    },
    {
       id: 2,
       icon: (
-         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff8a00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
          </svg>
       ),
-      iconBg: '#fff1f2',
-      iconBorder: '#ffe4e6',
+      iconBg: '#fff7ed',
+      iconBorder: '#ffedd5',
       title: 'Full Stack Development',
       desc: 'Crafting responsive and high-performance websites tailored to your unique business needs.'
    },
    {
       id: 3,
       icon: (
-         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff8a00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="16 18 22 12 16 6"></polyline>
             <polyline points="8 6 2 12 8 18"></polyline>
          </svg>
       ),
-      iconBg: '#f5f3ff',
-      iconBorder: '#ede9fe',
+      iconBg: '#fff7ed',
+      iconBorder: '#ffedd5',
       title: 'Web Design & Development',
       desc: 'A Website is an extension of yourself and we can help you to express it properly.'
    },
    {
       id: 4,
       icon: (
-         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff8a00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="3" y1="10" x2="21" y2="10"></line>
             <line x1="9" y1="22" x2="9" y2="10"></line>
             <line x1="15" y1="22" x2="15" y2="10"></line>
          </svg>
       ),
-      iconBg: '#ecfdf5',
-      iconBorder: '#d1fae5',
+      iconBg: '#fff7ed',
+      iconBorder: '#ffedd5',
       title: 'Software Testing Service',
       desc: 'Ensuring your digital products are bug-free and perform optimally across all platforms.'
    },
@@ -93,8 +93,8 @@ export default function Services() {
    }, [])
 
    const primaryNavy = '#1a1a2e'
-   const magentaTheme = '#b03673'
-   const magentaGradient = 'linear-gradient(135deg, #ff7eb3 0%, #3d1fc2 100%)'
+   const magentaTheme = '#ff8a00'
+   const magentaGradient = 'linear-gradient(135deg, #ffae42 0%, #ff6b00 100%)'
 
    const cardSize = isMobile ? 280 : 460
    const gap = isMobile ? 35 : 45
@@ -124,9 +124,41 @@ export default function Services() {
                position: 'absolute', bottom: -50, left: '6%', transform: 'translateX(-50%)',
                width: 100, height: 100, borderRadius: '50%', background: magentaGradient,
                zIndex: 1,
-               clipPath: 'inset(50% 0px 0px 0px)' // Shows only BOTTOM half pointing into White Trust section
+               clipPath: 'inset(50% 0px 0px 0px)'
             }} />
          )}
+
+         <style>{`
+        .approach-sec { background: #fcfaff; padding: 65px 0 120px 0; border-top: 1.2px solid #ececf4; }
+        .service-mesh { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,138,0,0.05) 1.5px, transparent 1.5px); background-size: 40px 40px; z-index: 0; pointer-events: none; }
+        .floating-blob {
+          position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.15; z-index: 1; pointer-events: none;
+          animation: blob-float 20s infinite alternate-reverse ease-in-out;
+        }
+        @keyframes blob-float {
+          0% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(50px, -30px) scale(1.2); }
+          100% { transform: translate(-20px, 40px) scale(0.9); }
+        }
+        @keyframes pulse-aura {
+          0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+          100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+        .shimmer-text {
+          background: linear-gradient(90deg, #0f172a 0%, #ff8a00 50%, #0f172a 100%);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 4s linear infinite;
+        }
+        @keyframes shimmer {
+          to { background-position: 200% center; }
+        }
+      `}</style>
+         
+         {/* 🎨 FLOATING ELEMENTS FOR ANIMATION */}
+         <div className="floating-blob" style={{ width: 400, height: 400, background: 'radial-gradient(circle, #ff8a00 0%, transparent 70%)', top: '10%', left: '-5%', opacity: 0.1 }} />
+         <div className="floating-blob" style={{ width: 300, height: 300, background: '#ffae42', bottom: '10%', right: '-5%', animationDelay: '-5s' }} />
 
          <section
             id="services"
@@ -141,11 +173,20 @@ export default function Services() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
          >
+            <div className="service-mesh" />
 
             <div style={{ textAlign: 'center', marginBottom: isMobile ? '3rem' : '5.5rem', position: 'relative', zIndex: 10 }}>
-               <h2 style={{ fontSize: isMobile ? '2.2rem' : '3.2rem', fontWeight: 800, color: primaryNavy }}>
+               {/* 🚀 Advanced Pulse Aura */}
+               <div style={{ 
+                  position: 'absolute', top: '50%', left: '50%', width: '120px', height: '120px', 
+                  background: 'rgba(255,138,0,0.4)', borderRadius: '50%', filter: 'blur(20px)',
+                  animation: 'pulse-aura 3s infinite', zIndex: -1
+               }} />
+               
+               <h2 className="shimmer-text" style={{ fontSize: isMobile ? '2.2rem' : '3.8rem', fontWeight: 900, fontFamily: "'PT Sans', sans-serif", letterSpacing: '-2px' }}>
                   Services we offer
                </h2>
+               <div style={{ width: 100, height: 4, background: magentaGradient, margin: '15px auto 0 auto', borderRadius: '50px', opacity: 0.8 }} />
             </div>
 
             <div style={{ width: '100vw', position: 'relative' }}>

@@ -15,18 +15,18 @@ export default function AboutPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  const d_purp = '#3d1fc2';
-  const d_magenta = '#ff7eb3';
-  const d_grad = 'linear-gradient(135deg, #ff7eb3 0%, #3d1fc2 100%)';
+  const d_purp = '#ff8a00';
+  const d_magenta = '#ffae42';
+  const d_grad = 'linear-gradient(135deg, #ff8a00 0%, #ffae42 100%)';
 
   return (
-    <div style={{ background: '#ffffff', minHeight: '100vh', color: '#0f172a', fontFamily: "'Outfit', sans-serif", overflowX: 'hidden' }}>
+    <div style={{ background: '#ffffff', minHeight: '100vh', color: '#0f172a', fontFamily: "'Lustria', serif", overflowX: 'hidden' }}>
 
 
       {/* 🧬 ULTRA-PREMIUM DYNAMIC BACKGROUND BLOBS */}
-      <div style={{ position: 'fixed', top: '-10%', left: '-5%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(61, 31, 194, 0.04) 0%, transparent 70%)', filter: 'blur(120px)', zIndex: 0, animation: 'float-slow 25s infinite linear' }} />
-      <div style={{ position: 'fixed', bottom: '-10%', right: '-5%', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(236, 72, 153, 0.04) 0%, transparent 70%)', filter: 'blur(120px)', zIndex: 0, animation: 'float-slow 30s infinite linear reverse' }} />
-      <div style={{ position: 'fixed', top: '40%', left: '50%', transform: 'translateX(-50%)', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(99, 102, 241, 0.02) 0%, transparent 70%)', filter: 'blur(100px)', zIndex: 0, animation: 'float-slow 20s infinite ease-in-out' }} />
+      <div style={{ position: 'fixed', top: '-10%', left: '-5%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(255, 138, 0, 0.04) 0%, transparent 70%)', filter: 'blur(120px)', zIndex: 0, animation: 'float-slow 25s infinite linear' }} />
+      <div style={{ position: 'fixed', bottom: '-10%', right: '-5%', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(255, 174, 66, 0.04) 0%, transparent 70%)', filter: 'blur(120px)', zIndex: 0, animation: 'float-slow 30s infinite linear reverse' }} />
+      <div style={{ position: 'fixed', top: '40%', left: '50%', transform: 'translateX(-50%)', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255, 138, 0, 0.02) 0%, transparent 70%)', filter: 'blur(100px)', zIndex: 0, animation: 'float-slow 20s infinite ease-in-out' }} />
       
       <style>{`
          @keyframes float-slow {
@@ -36,9 +36,9 @@ export default function AboutPage() {
            100% { transform: translate(0, 0) scale(1); }
          }
          @keyframes glow-pulse {
-           0% { box-shadow: 0 0 20px rgba(61, 31, 194, 0.1); }
-           50% { box-shadow: 0 0 40px rgba(61, 31, 194, 0.2); }
-           100% { box-shadow: 0 0 20px rgba(61, 31, 194, 0.1); }
+           0% { box-shadow: 0 0 20px rgba(255, 138, 0, 0.1); }
+           50% { box-shadow: 0 0 40px rgba(255, 138, 0, 0.2); }
+           100% { box-shadow: 0 0 20px rgba(255, 138, 0, 0.1); }
          }
          .card-hover:hover {
             transform: translateY(-8px) scale(1.02);
@@ -48,7 +48,7 @@ export default function AboutPage() {
          .portrait-hover:hover {
             transform: scale(1.05);
             border-color: ${d_purp}aa !important;
-            box-shadow: 0 30px 80px rgba(61, 31, 194, 0.15) !important;
+            box-shadow: 0 30px 80px rgba(255, 138, 0, 0.15) !important;
          }
          @media (max-width: 900px) {
            .hero-h1 { font-size: 2.2rem !important; }
@@ -107,11 +107,11 @@ export default function AboutPage() {
               
               {/* LEVEL 1: FOUNDER */}
               <div className="side-text-node" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '100px', gap: '35px' }}>
-                 <div className="portrait-hover" style={{ width: 140, height: 140, borderRadius: '44px', border: '6px solid #fff', overflow: 'hidden', boxShadow: '0 25px 50px rgba(61, 31, 194, 0.08)', background: '#f8fafc', transition: '0.4s cubic-bezier(0.2, 0.8, 0.2, 1)', cursor: 'default' }}>
-                    <img src="/assets/founder.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="CEO" />
+                 <div className="portrait-hover" style={{ width: 140, height: 140, borderRadius: '44px', border: '6px solid #fff', overflow: 'hidden', boxShadow: '0 25px 50px rgba(255, 138, 0, 0.08)', background: '#f8fafc', transition: '0.4s cubic-bezier(0.2, 0.8, 0.2, 1)', cursor: 'default' }}>
+                    <img src="/Untitled design.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="CEO" />
                  </div>
                  <div style={{ textAlign: 'left' }}>
-                    <span style={{ display: 'inline-block', fontSize: '0.6rem', fontWeight: 1000, color: d_purp, letterSpacing: '6px', textTransform: 'uppercase', marginBottom: '10px', background: 'rgba(61, 31, 194, 0.03)', padding: '2px 8px', borderRadius: '4px' }}>
+                    <span style={{ display: 'inline-block', fontSize: '0.6rem', fontWeight: 1000, color: d_purp, letterSpacing: '6px', textTransform: 'uppercase', marginBottom: '10px', background: 'rgba(255, 138, 0, 0.03)', padding: '2px 8px', borderRadius: '4px' }}>
                        • EXECUTIVE •
                     </span>
                     <h5 style={{ fontSize: '1.5rem', fontWeight: 1000, margin: '0 0 5px 0', letterSpacing: '-0.8px' }}>MUHAMMAD RAHAM</h5>
@@ -149,7 +149,7 @@ export default function AboutPage() {
 
               {/* LEVEL 3: LEADERS */}
               <div className="side-text-node" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '100px', gap: '35px' }}>
-                 <div className="portrait-hover" style={{ width: 140, height: 140, borderRadius: '44px', border: '6px solid #fff', overflow: 'hidden', boxShadow: '0 30px 70px rgba(61, 31, 194, 0.1)', background: '#f8fafc', transition: '0.4s cubic-bezier(0.2, 0.8, 0.2, 1)' }}>
+                 <div className="portrait-hover" style={{ width: 140, height: 140, borderRadius: '44px', border: '6px solid #fff', overflow: 'hidden', boxShadow: '0 30px 70px rgba(255, 138, 0, 0.1)', background: '#f8fafc', transition: '0.4s cubic-bezier(0.2, 0.8, 0.2, 1)' }}>
                     <img 
                        src="/assets/huzaifa_mushtaq.jpeg" 
                        style={{ 
@@ -160,7 +160,7 @@ export default function AboutPage() {
                     />
                  </div>
                  <div style={{ textAlign: 'left' }}>
-                    <span style={{ display: 'inline-block', fontSize: '0.65rem', fontWeight: 1000, color: d_purp, letterSpacing: '6px', textTransform: 'uppercase', marginBottom: '10px', background: 'rgba(61, 31, 194, 0.03)', padding: '2px 8px', borderRadius: '4px' }}>
+                    <span style={{ display: 'inline-block', fontSize: '0.65rem', fontWeight: 1000, color: d_purp, letterSpacing: '6px', textTransform: 'uppercase', marginBottom: '10px', background: 'rgba(255, 138, 0, 0.03)', padding: '2px 8px', borderRadius: '4px' }}>
                        • ENGINEERING •
                     </span>
                     <h5 style={{ fontSize: '1.5rem', fontWeight: 1000, margin: '0 0 5px 0', letterSpacing: '-0.8px' }}>HUZAIFA MUSHTAQ</h5>
@@ -194,14 +194,16 @@ export default function AboutPage() {
               <span className="tree-svg-desktop" style={{ fontSize: '0.65rem', fontWeight: 1000, color: '#bdc3c7', letterSpacing: '6px', textTransform: 'uppercase' }}>CORE.SERVICES</span>
            </div>
            
-           <div className="service-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '25px' }}>
+           <div className="service-grid dx-equal-grid" style={{ gap: '25px' }}>
               {services.map((s, i) => (
-                <div key={i} className="card-hover" style={{ padding: '35px', background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(10px)', borderRadius: '36px', border: '1.5px solid #f1f5f9', transition: '0.5s cubic-bezier(0.2, 0.8, 0.2, 1)', cursor: 'default' }}>
-                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px' }}>
-                      <div style={{ width: '45px', height: '45px', background: 'rgba(61, 31, 194, 0.04)', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', border: '1.5px solid rgba(61, 31, 194, 0.1)' }}>{s.icon}</div>
-                      <span style={{ fontSize: '0.55rem', fontWeight: 1000, color: d_purp, background: 'rgba(61, 31, 194, 0.05)', padding: '5px 10px', borderRadius: '6px', letterSpacing: '1px' }}>{s.tag}</span>
+                <div key={i} className="card-hover dx-card-container" style={{ padding: '35px', background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(10px)', borderRadius: '36px', border: '1.5px solid #f1f5f9', cursor: 'default' }}>
+                   <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px' }}>
+                         <div style={{ width: '45px', height: '45px', background: 'rgba(255, 138, 0, 0.04)', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', border: '1.5px solid rgba(255, 138, 0, 0.1)' }}>{s.icon}</div>
+                         <span style={{ fontSize: '0.55rem', fontWeight: 1000, color: d_purp, background: 'rgba(255, 138, 0, 0.05)', padding: '5px 10px', borderRadius: '6px', letterSpacing: '1px' }}>{s.tag}</span>
+                      </div>
+                      <h4 style={{ fontSize: '1.2rem', fontWeight: 1000, marginBottom: '12px', color: '#0f172a' }}>{s.title}</h4>
                    </div>
-                   <h4 style={{ fontSize: '1.2rem', fontWeight: 1000, marginBottom: '12px', color: '#0f172a' }}>{s.title}</h4>
                    <p style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.6, fontWeight: 500, margin: 0 }}>{s.desc}</p>
                 </div>
               ))}

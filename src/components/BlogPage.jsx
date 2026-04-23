@@ -55,8 +55,8 @@ const blogData = [
 export default function BlogPage() {
    const [selected, setSelected] = useState(null)
    const [filter, setFilter] = useState('ALL REPORTS')
-   const d_purp = '#3d1fc2'
-   const themeBorder = 'rgba(61,31,194,0.12)'
+   const d_purp = '#ff8a00'
+   const themeBorder = 'rgba(255,138,0,0.12)'
 
    // 🛑 SCROLL LOCK 🛑
    useEffect(() => {
@@ -76,8 +76,10 @@ export default function BlogPage() {
    const filteredData = filter === 'ALL REPORTS' ? blogData : blogData.filter(b => b.tag === filter)
 
    return (
-      <div style={{ background: '#fff', minHeight: '100vh', color: '#0f172a', fontFamily: "'Outfit', sans-serif" }}>
-
+    <div style={{ background: '#ffffff', minHeight: '100vh', color: '#0f172a', fontFamily: "'Lustria', serif", overflowX: 'hidden' }}>
+      <style>{`
+        h1, h2, h3, h4, h5, h6 { font-family: 'PT Sans', sans-serif; }
+      `}</style>
 
          <main style={{ paddingTop: '100px', paddingBottom: '160px', overflow: 'hidden', position: 'relative' }}>
             
@@ -88,7 +90,7 @@ export default function BlogPage() {
             <section style={{ maxWidth: '1420px', margin: '0 auto', padding: '0 40px', textAlign: 'center', marginBottom: '100px', position: 'relative', zIndex: 1 }}>
                <span style={{ fontSize: '0.76rem', fontWeight: 1000, color: '#94a3b8', letterSpacing: '6px', marginBottom: '30px', display: 'block' }}>INTELLIGENCE REPORTS DEVNEXES LABS</span>
                <h1 className="v52-hero-title" style={{ fontSize: '5.2rem', fontWeight: 1000, color: '#0f172a', letterSpacing: '-4px', lineHeight: 1, marginBottom: '30px' }}>
-                  <span style={{ fontWeight: 100, color: '#1e293b', letterSpacing: '3px', textShadow: '4px 4px 15px rgba(0,0,0,0.35)' }}>Engineering</span> <span style={{ color: '#ff7eb3', fontWeight: 1000 }}>Insights.</span>
+                  <span style={{ fontWeight: 100, color: '#1e293b', letterSpacing: '3px', textShadow: '4px 4px 15px rgba(0,0,0,0.35)' }}>Engineering</span> <span style={{ color: '#ffae42', fontWeight: 1000 }}>Insights.</span>
                </h1>
                <p style={{ fontSize: '1.2rem', color: '#64748b', maxWidth: '650px', margin: '0 auto 60px', lineHeight: 1.6 }}>Deep-dives into neural automation, memory-safe architectures, and global-scale orchestration.</p>
 
@@ -188,7 +190,7 @@ export default function BlogPage() {
             @keyframes v52-slide { from { transform: translateX(100%); } to { transform: translateX(0); } }
             @keyframes v52-fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-            .v52-ambient-orb { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(61,31,194,0.04) 0%, transparent 70%); filter: blur(80px); z-index: 0; pointer-events: none; }
+            .v52-ambient-orb { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(255,138,0,0.04) 0%, transparent 70%); filter: blur(80px); z-index: 0; pointer-events: none; }
 
             .v52-pill { background: #fff; border: 1.5px solid #f2f2f5; padding: 12px 28px; border-radius: 50px; font-size: 0.65rem; font-weight: 1000; color: #94a3b8; cursor: pointer; letter-spacing: 2px; }
             .v52-pill.active { background: #0f172a; color: #fff; border-color: #0f172a; }
@@ -237,7 +239,7 @@ export default function BlogPage() {
             /* ⚡ EFFICIENT BENTO MATRIX (V52) ⚡ */
             .v52-bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .v52-bento-item { padding: 22px; border-radius: 18px; border: 1.5px solid ${themeBorder}; background: #ffffff; transition: 0.4s; overflow: hidden; position: relative; }
-            .v52-bento-item:hover { border-color: ${d_purp}; background: rgba(61,31,194,0.01); }
+            .v52-bento-item:hover { border-color: ${d_purp}; background: rgba(255,138,0,0.01); }
             
             .b-lbl-efficient { font-size: 0.5rem; font-weight: 1000; color: #94a3b8; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px; }
             .b-val-efficient { font-size: 1.05rem; font-weight: 1000; color: #0f172a; letter-spacing: -0.5px; line-height: 1.2; }

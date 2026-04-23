@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lustria&display=swap');
 @import "tailwindcss";
 
 :root {
-  --color-primary: #6c3aff;
-  --color-primary-dark: #3b1eb0;
-  --color-accent: #b469ff;
-  --color-pink: #d94fff;
-  --color-text-dark: #1e1e2f;
-  --color-text-muted: #555577;
-  --color-heading-dark: #1a1a2e;
+  --color-primary: #ff8a00;
+  --color-primary-dark: #cc6e00;
+  --color-accent: #ffb347;
+  --color-pink: #ff6b00;
+  --color-text-dark: #334155;
+  --color-text-heading: #0f172a;
+  --color-text-muted: #64748b;
+  --color-heading-dark: #0f172a;
   
-  --grad-primary: linear-gradient(135deg, #7c3eff 0%, #3d1fc2 100%);
-  --grad-logo: linear-gradient(135deg, #ff60a8 0%, #3d1fc2 100%);
-  --color-highlight: #c175ff;
+  --grad-primary: linear-gradient(135deg, #ff8a00 0%, #e65100 100%);
+  --grad-logo: linear-gradient(135deg, #ffae42 0%, #ff6b00 100%);
+  --color-highlight: #ffcc80;
 }
 
 * {
@@ -26,14 +27,15 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Lustria', serif;
   color: var(--color-text-dark);
   background: #ffffff;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.logo-font {
-  font-family: 'Dancing Script', cursive;
+h1, h2, h3, h4, h5, h6, .highlight-font {
+  font-family: 'PT Sans', sans-serif;
+  color: var(--color-text-heading);
 }
 
 @keyframes fadeUp {
@@ -42,3 +44,45 @@ body {
 }
 
 .animate-fade-up { animation: fadeUp 0.7s ease both; }
+
+/* 🏛️ GLOBAL CARD ALIGNMENT SYSTEM */
+.dx-card-container {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  justify-content: space-between !important;
+}
+
+.dx-equal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* 🖼️ LOGO CONTAINMENT */
+.dx-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@keyframes pulse-aura {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #0f172a 0%, #ff8a00 50%, #0f172a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+  display: inline-block;
+}

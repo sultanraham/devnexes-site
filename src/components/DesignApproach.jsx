@@ -68,7 +68,7 @@ export default function DesignApproach() {
 
       {/* 🏷️ SECTION HEADER */}
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <div style={{ width: 60, height: 4, background: 'linear-gradient(90deg, #ff7eb3 0%, #3d1fc2 100%)', margin: '0 auto 20px auto', borderRadius: 2 }} />
+        <div style={{ width: 60, height: 4, background: 'linear-gradient(90deg, #ff8a00 0%, #ffae42 100%)', margin: '0 auto 20px auto', borderRadius: 2 }} />
         <h4 style={{ fontSize: '1.6rem', fontWeight: 300, color: textGray, marginBottom: '0.8rem' }}>
           Our design and
         </h4>

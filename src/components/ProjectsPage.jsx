@@ -87,9 +87,9 @@ const CATEGORIES = ['All', 'Software', 'Database', 'Cyber', 'Messaging', 'Educat
 export default function ProjectsPage() {
    const [filter, setFilter] = useState('All')
    const [selected, setSelected] = useState(null)
-   const c_mix = 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)'
-   const c_purp = '#a855f7'
-   const c_pink = '#ec4899'
+   const c_mix = 'linear-gradient(135deg, #ff8a00 0%, #ffae42 100%)'
+   const c_purp = '#ff8a00'
+   const c_pink = '#ffae42'
 
    useEffect(() => {
       window.scrollTo(0, 0)
@@ -145,36 +145,40 @@ export default function ProjectsPage() {
             {/* GRID V119 */}
             <div className="v118-grid-sec">
                <div className="proj-container">
-                  <div className="v118-grid">
+                  <div className="v118-grid dx-equal-grid">
                      {filteredProjects.map((proj) => (
-                        <div key={proj.id} className="v118-card" onClick={() => setSelected(proj)}>
+                        <div key={proj.id} className="v118-card dx-card-container" onClick={() => setSelected(proj)}>
+                           <div className="v118-holographic-rim" />
                            <div className="v118-media">
-                              <img src={proj.img} alt={proj.title} crossOrigin="anonymous" />
+                              <img src={proj.img} alt={proj.title} />
                               <div className="v118-overlay-glow" />
-                              <div className="v118-badge-tier">{proj.price} Starting</div>
+                              <span className="v118-badge-tier">{proj.status}</span>
                               <div className="v119-meta-bar">
-                                 <div className="v119-meta-cat">{proj.category}</div>
-                                 <div className={`v119-meta-stat ${proj.status.toLowerCase()}`}>
-                                    <span className="v119-pulse" />
-                                    {proj.status}
+                                 <span className="v119-meta-cat">{proj.category.toUpperCase()}</span>
+                                 <div className={`v119-meta-stat ${proj.status === 'Critical' ? 'critical' : ''}`}>
+                                    <div className="v119-pulse" />
+                                    <span>{proj.v}</span>
                                  </div>
                               </div>
                            </div>
                            <div className="v118-body">
-                              <h3 className="v118-h3">{proj.title}</h3>
-                              <p className="v118-desc-txt">{proj.desc}</p>
-                              <div className="v118-stack-mesh">
-                                 {proj.stack?.map(s => <span key={s} className="v118-s-chip">{s}</span>)}
+                              <div style={{ flex: 1 }}>
+                                 <h3 className="v118-h3">{proj.title}</h3>
+                                 <p className="v118-desc-txt">{proj.desc}</p>
+                                 <div style={{ marginBottom: '15px' }}>
+                                    {proj.metrics.slice(0, 3).map((m, i) => (
+                                       <span key={i} className="v118-s-chip">{m}</span>
+                                    ))}
+                                 </div>
                               </div>
                               <div className="v118-footer">
-                                 <div className="v118-version-id">{proj.v}</div>
-                                 <div className="v118-right">
-                                    <div className="v118-price-tag">{proj.price}</div>
-                                    <span className="v118-details-link">Details →</span>
+                                 <span className="v118-version-id">R-LOG :: {proj.id}0/SYS</span>
+                                 <div style={{ textAlign: 'right' }}>
+                                    <span className="v118-price-tag">{proj.price}</span>
+                                    <span className="v118-details-link">VIEW SPEC_</span>
                                  </div>
                               </div>
                            </div>
-                           <div className="v118-holographic-rim" />
                         </div>
                      ))}
                   </div>
@@ -284,9 +288,10 @@ export default function ProjectsPage() {
          )}
 
          <style>{`
-            @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@800&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Lustria&family=PT+Sans&family=JetBrains+Mono:wght@800&display=swap');
             
-            .v104-root { background: #fff; min-height: 100vh; font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; overflow-x: hidden; }
+            .v104-root { background: #fff; min-height: 100vh; font-family: 'Lustria', serif; color: #1e293b; overflow-x: hidden; }
+            h1, h2, h3, h4, h5, h6 { font-family: 'PT Sans', sans-serif; }
             .proj-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
             .v104-hero { padding: 130px 0 100px 0; background: #fff; border-bottom: 1.5px solid #f8fafc; position: relative; overflow: hidden; }
             .v104-mesh-layer { position: absolute; inset: 0; background-image: radial-gradient(rgba(148,163,184,0.18) 1.2px, transparent 1.2px); background-size: 35px 35px; opacity: 0.6; }

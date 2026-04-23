@@ -126,10 +126,10 @@ const serviceList = [
 
 export default function ServicesPage() {
    const primaryNavy = '#0f172a'
-   const d_purp = '#3d1fc2'
-   const brandMagenta = '#ff7eb3'
-   const d_grad = 'linear-gradient(135deg, #ff7eb3 0%, #3d1fc2 100%)'
-   const themeBorder = 'rgba(61,31,194,0.12)'
+   const d_purp = '#ff8a00'
+   const brandMagenta = '#ffae42'
+   const d_grad = 'linear-gradient(135deg, #ff8a00 0%, #ffae42 100%)'
+   const themeBorder = 'rgba(255,138,0,0.12)'
 
    const [selectedService, setSelectedService] = useState(null)
    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
@@ -159,8 +159,10 @@ export default function ServicesPage() {
    }
 
    return (
-      <div style={{ background: '#ffffff', minHeight: '100vh', color: '#0f172a', fontFamily: "'Outfit', sans-serif" }}>
-         
+    <div style={{ background: '#ffffff', minHeight: '100vh', color: '#0f172a', fontFamily: "'Lustria', serif", overflowX: 'hidden' }}>
+      <style>{`
+        h1, h2, h3, h4, h5, h6 { font-family: 'PT Sans', sans-serif; }
+      `}</style>         
 
 
          <main style={{ paddingTop: '100px', paddingBottom: '160px', position: 'relative', zIndex: 1, overflow: 'hidden', width: '100%' }}>
@@ -168,13 +170,13 @@ export default function ServicesPage() {
                
                {/* 🌈 DESKTOP HERO MASTERPIECE (RESTORED V36/V38) 🌈 */}
                <div className="v41-hero-flex" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '140px', position: 'relative' }}>
-                  <div className="v41-hero-text" style={{ textAlign: 'left', position: 'relative', zIndex: 10 }}>
+                  <div className="v41-hero-text" style={{ textAlign: 'left', position: 'relative', zIndex: 10, paddingTop: '60px', paddingLeft: '80px' }}>
                      <span style={{ fontSize: '0.76rem', fontWeight: 1000, color: '#94a3b8', letterSpacing: '6px', marginBottom: '30px', display: 'block' }}>STRATEGIC CAPABILITIES 01</span>
                      <h1 className="v41-hero-h1">
                         <span className="building-text-v41">Building</span> Digital <br />
                         <span style={{ background: d_grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Success.</span>
                      </h1>
-                     <p className="v41-hero-para" style={{ maxWidth: '500px' }}>
+                     <p className="v41-hero-para" style={{ maxWidth: '500px', marginTop: '20px' }}>
                         Transforming technical complexity into mission-critical engineering solutions
                         built for industrial-scale production.
                      </p>
@@ -212,14 +214,16 @@ export default function ServicesPage() {
                </div>
 
                {/* SERVICE GRID */}
-               <div className="v41-grid-layout" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+               <div className="v41-grid-layout dx-equal-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
                   {serviceList.map((s) => (
-                     <div key={s.id} className="v41-service-card" style={{ border: `1.5px solid ${themeBorder}` }} onClick={() => setSelectedService(s)}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '40px' }}>
-                           <div className="v41-icon-box">{s.icon}</div>
+                     <div key={s.id} className="v41-service-card dx-card-container" style={{ border: `1.5px solid ${themeBorder}` }} onClick={() => setSelectedService(s)}>
+                        <div>
+                           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '40px' }}>
+                              <div className="v41-icon-box">{s.icon}</div>
+                           </div>
+                           <h3 className="v41-title-label">{s.title}</h3>
+                           <p className="v41-desc-text">{s.desc}</p>
                         </div>
-                        <h3 className="v41-title-label">{s.title}</h3>
-                        <p className="v41-desc-text">{s.desc}</p>
                         
                         <div className="v41-explore-node">
                            <span className="v41-explore-text">EXPLORE</span>
@@ -295,9 +299,9 @@ export default function ServicesPage() {
             .v41-hero-para { font-size: 1.2rem; line-height: 1.6; color: #64748b; font-weight: 400; }
             .building-text-v41 { font-weight: 200; letter-spacing: 1px; color: #94a3b8; }
             
-            .v41-ambient-fog { position: absolute; inset: -100px; background: radial-gradient(circle, rgba(61,31,194,0.06) 0%, transparent 70%); filter: blur(100px); z-index: -1; }
-            .v41-module { position: absolute; padding: 18px; border-radius: 20px; background: #ffffff; box-shadow: 0 40px 100px rgba(0,0,0,0.06), inset 0 0 35px rgba(61,31,194,0.06); transition: 0.6s; cursor: pointer; overflow: hidden; }
-            .v41-responsive-stack:hover .v41-module { border-color: ${d_purp}88 !important; box-shadow: 0 40px 100px rgba(61,31,194,0.12), inset 0 0 55px rgba(61,31,194,0.14); }
+            .v41-ambient-fog { position: absolute; inset: -100px; background: radial-gradient(circle, rgba(255,138,0,0.06) 0%, transparent 70%); filter: blur(100px); z-index: -1; }
+            .v41-module { position: absolute; padding: 18px; border-radius: 20px; background: #ffffff; box-shadow: 0 40px 100px rgba(0,0,0,0.06), inset 0 0 35px rgba(255,138,0,0.06); transition: 0.6s; cursor: pointer; overflow: hidden; }
+            .v41-responsive-stack:hover .v41-module { border-color: ${d_purp}88 !important; box-shadow: 0 40px 100px rgba(255,138,0,0.12), inset 0 0 55px rgba(255,138,0,0.14); }
             .v41-mod-1 { animation: v41-float 6s ease-in-out infinite; }
             .v41-mod-2 .grid-flow-v41 { animation: v41-grid-move 10s linear infinite; }
             .v41-mesh-icon { animation: v41-rot 40s linear infinite; opacity: 0.3; }
@@ -306,8 +310,8 @@ export default function ServicesPage() {
 
             /* Cards Base */
             .v41-service-card { position: relative; background: #fff; border-radius: 26px; cursor: pointer; transition: 0.6s; padding: 50px; overflow: hidden; }
-            .v41-service-card:hover { transform: translateY(-12px); border-color: ${d_purp} !important; box-shadow: 0 40px 80px rgba(61,31,194,0.08); }
-            .v41-icon-box { width: 50px; height: 50px; border-radius: 14px; background: rgba(61,31,194,0.06); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: 0.4s; }
+            .v41-service-card:hover { transform: translateY(-12px); border-color: ${d_purp} !important; box-shadow: 0 40px 80px rgba(255,138,0,0.08); }
+            .v41-icon-box { width: 50px; height: 50px; border-radius: 14px; background: rgba(255,138,0,0.06); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: 0.4s; }
             .v41-service-card:hover .v41-icon-box { background: ${d_purp}; color: #fff; transform: scale(1.1); }
             .v41-title-label { font-size: 1.8rem; font-weight: 1000; margin-bottom: 18px; color: ${primaryNavy}; letter-spacing: -1.5px; }
             .v41-desc-text { color: #64748b; line-height: 1.7; margin-bottom: 40px; }
@@ -330,7 +334,7 @@ export default function ServicesPage() {
             .v41-narrative { font-size: 1.15rem; font-weight: 300; color: #64748b; line-height: 1.75; }
             .v41-bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .v41-bento-item { padding: 25px; border-radius: 20px; border: 1px solid ${themeBorder}; }
-            .v41-phase-tag { font-size: 0.6rem; font-weight: 1000; color: ${d_purp}; padding: 4px 10px; background: rgba(61,31,194,0.04); border-radius: 6px; }
+            .v41-phase-tag { font-size: 0.6rem; font-weight: 1000; color: ${d_purp}; padding: 4px 10px; background: rgba(255,138,0,0.04); border-radius: 6px; }
             .v41-roadmap-item { display: flex; align-items: center; gap: 20px; padding: 15px 25px; background: #fdfdfd; border-radius: 18px; border: 1px solid #f1f5f9; }
             .v41-final-handshake { width: 100%; padding: 22px; background: #000; color: #fff; border-radius: 20px; font-weight: 1000; }
 

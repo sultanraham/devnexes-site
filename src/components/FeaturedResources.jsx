@@ -110,13 +110,13 @@ export default function FeaturedResources() {
         .drawer-scroll-body::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 
         .res-card { cursor: pointer; transition: 0.4s; overflow: hidden; border-radius: 20px; background: #fff; border: 1.5px solid #f1f5f9; padding: 15px; }
-        .res-card:hover { transform: translateY(-8px); border-color: #7c3aed; box-shadow: 0 30px 60px rgba(124, 58, 237, 0.08); }
+        .res-card:hover { transform: translateY(-8px); border-color: #ff8a00; box-shadow: 0 30px 60px rgba(255, 138, 0, 0.08); }
         .res-img-box { height: 180px; border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
         .res-img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
         .res-card:hover .res-img { transform: scale(1.1); }
 
         .kpi-row { display: flex; align-items: center; gap: 15px; padding: 20px; background: #f8fafc; border-radius: 15px; border: 1px solid #f1f5f9; margin-bottom: 12px; }
-        .expert-card { background: linear-gradient(135deg, #1a1a2e 0%, #3d1fc2 100%); padding: 35px; border-radius: 24px; color: #fff; margin-top: 50px; }
+        .expert-card { background: linear-gradient(135deg, #1a1a2e 0%, #ff8a00 100%); padding: 35px; border-radius: 24px; color: #fff; margin-top: 50px; }
         
         @media (max-width: 1024px) {
            .grid-container { grid-template-columns: repeat(2, 1fr) !important; }
@@ -155,7 +155,7 @@ export default function FeaturedResources() {
                  </div>
 
                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                    <span style={{ background: '#7c3aed1a', color: '#7c3aed', padding: '4px 10px', borderRadius: 6, fontSize: '0.65rem', fontWeight: 950, textTransform: 'uppercase' }}>{selected.category}</span>
+                    <span style={{ background: '#ff8a001a', color: '#ff8a00', padding: '4px 10px', borderRadius: 6, fontSize: '0.65rem', fontWeight: 950, textTransform: 'uppercase' }}>{selected.category}</span>
                     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#cbd5e1' }}>{selected.readingTime}</span>
                  </div>
 
@@ -199,7 +199,7 @@ export default function FeaturedResources() {
       </div>
 
       <div style={{ textAlign: 'center', marginBottom: '100px' }}>
-         <div style={{ width: 60, height: 4, background: 'linear-gradient(90deg, #ff7eb3, #3d1fc2)', margin: '0 auto 25px auto', borderRadius: 2 }}></div>
+         <div style={{ width: 60, height: 4, background: 'linear-gradient(90deg, #ff8a00, #ffae42)', margin: '0 auto 25px auto', borderRadius: 2 }}></div>
          <h2 style={{ fontSize: '3.5rem', fontWeight: 950, color: '#1a1a2e', letterSpacing: '-1.5px' }}>Featured Resources</h2>
          <p style={{ fontSize: '1.2rem', color: '#5e5e77', marginTop: '10px' }}>Unlock the power of our latest technological research and deployment strategies.</p>
       </div>
@@ -211,7 +211,7 @@ export default function FeaturedResources() {
                  <div className="res-img-box">
                     <img src={res.img} className="res-img" alt="" />
                  </div>
-                 <span style={{ background: '#7c3aed1a', color: '#7c3aed', padding: '4px 10px', borderRadius: 6, fontSize: '0.65rem', fontWeight: 950, textTransform: 'uppercase', letterSpacing: '1px', display: 'inline-block', marginBottom: '12px' }}>{res.category}</span>
+                 <span style={{ background: '#ff8a001a', color: '#ff8a00', padding: '4px 10px', borderRadius: 6, fontSize: '0.65rem', fontWeight: 950, textTransform: 'uppercase', letterSpacing: '1px', display: 'inline-block', marginBottom: '12px' }}>{res.category}</span>
                  <h4 style={{ fontSize: '1.1rem', fontWeight: 950, color: '#1a1a2e', lineHeight: 1.25, marginBottom: '25px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{res.title}</h4>
                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <div style={{ width: 25, height: 2, background: '#e2e8f0' }}></div>

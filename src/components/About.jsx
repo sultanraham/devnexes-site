@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 export default function About() {
-  const magentaGradient = 'linear-gradient(90deg, #ff7eb3 0%, #3d1fc2 100%)'
+  const magentaGradient = 'linear-gradient(90deg, #ff8a00 0%, #ffae42 100%)'
   const primaryNavy = '#1a1a2e'
   const textBody = '#5e5e77'
-  const accentMagenta = '#b03673'
+  const accentMagenta = '#ff8a00'
 
   return (
     <section id="about" style={{ padding: '120px 0', background: '#ffffff' }}>
@@ -27,7 +27,7 @@ export default function About() {
 
           <a href="/services" style={{ 
             display: 'flex', alignItems: 'center', gap: '0.8rem', 
-            color: '#6366f1', fontWeight: 600, textDecoration: 'none', fontSize: '1rem' 
+            color: '#ff8a00', fontWeight: 600, textDecoration: 'none', fontSize: '1rem' 
           }}>
             See more Information
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -24,10 +24,10 @@ export default function Navbar() {
   }, [mobileOpen])
 
   const btnStyle = {
-    background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)',
+    background: 'linear-gradient(135deg, #ff8a00 0%, #ffae42 100%)',
     color: '#fff', fontSize: '0.88rem', fontWeight: 700, padding: '12px 28px',
     border: 'none', borderRadius: 12, cursor: 'pointer',
-    boxShadow: '0 10px 25px rgba(168, 85, 247, 0.2)',
+    boxShadow: '0 10px 25px rgba(255, 138, 0, 0.2)',
     transition: '0.3s cubic-bezier(0.16, 1, 0.3, 1)',
     whiteSpace: 'nowrap',
   }
@@ -40,7 +40,7 @@ export default function Navbar() {
           background: 'rgba(255,255,255,0.78)',
           backdropFilter: 'saturate(180%) blur(30px)',
           WebkitBackdropFilter: 'saturate(180%) blur(30px)',
-          borderBottom: scrolled ? '1px solid rgba(168,85,247,0.12)' : '1px solid rgba(255,255,255,0)',
+          borderBottom: scrolled ? '1px solid rgba(255,138,0,0.12)' : '1px solid rgba(255,255,255,0)',
           boxShadow: scrolled ? '0 10px 40px rgba(0,0,0,0.06)' : 'none',
           transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
@@ -50,18 +50,29 @@ export default function Navbar() {
           {/* DEFINITIVE NAV HEIGHT ADJUSTMENT (V114) */}
           <nav style={{ height: 95, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
-            {/* SYNCED LOGO RE-SCALE (V114) */}
-            <a href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0, textDecoration: 'none' }}>
-              <img
-                src={logo}
-                alt="Devnexes"
-                style={{
-                  height: '140px', // Restored to a more dominant scale, balanced with 95px container
-                  width: 'auto',
-                  objectFit: 'contain',
-                  marginTop: '0px'
-                }}
-              />
+            {/* DEVNEXES OFFICIAL LOGO (FAVICON) */}
+            <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '15px', textDecoration: 'none' }}>
+              <div style={{
+                width: 42, height: 42, borderRadius: '12px',
+                overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                boxShadow: '0 8px 20px rgba(255, 138, 0, 0.2)'
+              }}>
+                <img src="/favicon.png" alt="Devnexes" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+                <span style={{ 
+                  fontSize: '1.45rem', fontWeight: 950, color: '#0f172a', 
+                  letterSpacing: '-1px', lineHeight: 1 
+                }}>
+                  Devnexes
+                </span>
+                <span style={{ 
+                  fontSize: '0.65rem', fontWeight: 800, color: '#ff8a00', 
+                  letterSpacing: '2.5px', textTransform: 'uppercase', marginTop: '2px' 
+                }}>
+                  Digital Solutions
+                </span>
+              </div>
             </a>
 
             <ul className="dn-desktop-links" style={{ display: 'flex', gap: '35px', listStyle: 'none', margin: 0, padding: 0 }}>
@@ -111,7 +122,7 @@ export default function Navbar() {
 
       <div className={`dn-mobile-drawer ${mobileOpen ? 'open' : ''}`}>
         <div style={{ marginBottom: '30px' }}>
-          <img src={logo} alt="Devnexes" style={{ height: '45px' }} />
+          <img src="/favicon.png" alt="Devnexes" style={{ height: '45px' }} />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           {navLinks.map(l => (
@@ -160,7 +171,7 @@ export default function Navbar() {
           transition: 0.4s; backdrop-filter: blur(4px);
         }
         .dn-drawer-overlay.open { opacity: 1; visibility: visible; }
-        .dn-desktop-links a:hover { color: #a855f7 !important; }
+        .dn-desktop-links a:hover { color: #ff8a00 !important; }
       `}</style>
     </>
   )

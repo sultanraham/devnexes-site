@@ -152,60 +152,60 @@ export default function CaseStudies() {
       )}
 
       <style>{`
-         .case-grid-card { background: #fff; border-radius: 24px; overflow: hidden; border: 1.5px solid #f1f5f9; display: flex; flex-direction: column; transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
-         .case-grid-card:hover { transform: translateY(-10px); border-color: #ff8a0044; box-shadow: 0 40px 80px rgba(0,0,0,0.06); }
+         /* 🏆 MODAL REFINEMENTS (V117) 🏆 */
+         .modal-overlay { 
+            position: fixed; inset: 0; background: rgba(15,23,42,0.85); 
+            backdrop-filter: blur(12px); z-index: 100000; 
+            display: flex; align-items: center; justify-content: center; 
+            padding: 20px; overflow-y: auto; 
+         }
+         .modal-box { 
+            width: 100%; max-width: 1100px; max-height: none; 
+            background: #fff; border-radius: 40px; position: relative; 
+            overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.4); 
+            display: flex; flex-direction: column;
+         }
+         .modal-close-btn { 
+            position: absolute; top: 25px; right: 25px; width: 45px; height: 45px; 
+            border-radius: 50%; border: none; background: #fff; z-index: 100; 
+            cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            font-size: 1.2rem; font-weight: 400; display: flex; align-items: center; justify-content: center;
+         }
+         .modal-inner { display: flex; width: 100%; min-height: 500px; }
+         .mi-left { width: 42%; position: relative; background: #000; flex-shrink: 0; min-height: 100%; }
+         .mi-left img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+         .mi-overlay { position: absolute; bottom: 50px; left: 50px; right: 50px; z-index: 2; }
+         .mi-tag { color: #ff8a00; font-size: 0.75rem; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; }
+         .mi-title { color: #fff; font-size: 2.8rem; font-weight: 950; margin-top: 15px; line-height: 1; letter-spacing: -2px; }
          
-         .card-pic-wrap { height: 220px; position: relative; overflow: hidden; }
-         .card-pic-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 1s; }
-         .case-grid-card:hover .card-pic-wrap img { transform: scale(1.1); }
-         .card-badge { position: absolute; top: 20px; right: 20px; background: rgba(15,23,42,0.9); color: #fff; padding: 6px 14px; border-radius: 100px; font-size: 0.65rem; font-weight: 800; letter-spacing: 1px; backdrop-filter: blur(5px); }
-         
-         .card-info { padding: 35px; flex: 1; display: flex; flex-direction: column; }
-         .card-sub { font-size: 0.7rem; font-weight: 800; color: #ff8a00; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; }
-         .card-title { font-size: 1.55rem; font-weight: 900; color: #0f172a; margin-bottom: 15px; line-height: 1.2; }
-         .card-desc { font-size: 0.95rem; color: #64748b; line-height: 1.7; margin-bottom: 25px; flex: 1; }
-         
-         .card-btn { background: #f8fafc; border: 1.5px solid #e2e8f0; color: #0f172a; padding: 12px 25px; border-radius: 12px; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: 0.3s; width: fit-content; }
-         .card-btn:hover { background: #0f172a; border-color: #0f172a; color: #fff; transform: scale(1.05); }
-
-         /* 🏆 MODAL REFINEMENTS (V116) 🏆 */
-         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px; }
-         .modal-box { width: 100%; max-width: 1000px; max-height: 90vh; background: #fff; border-radius: 32px; position: relative; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.25); display: flex; flex-direction: column; }
-         .modal-close-btn { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; border: none; background: #fff; z-index: 100; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15); font-weight: 900; }
-         .modal-inner { display: flex; flex: 1; min-height: 0; }
-         .mi-left { width: 40%; position: relative; background: #000; flex-shrink: 0; overflow: hidden; }
-         .mi-left img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
-         .mi-overlay { position: absolute; bottom: 40px; left: 40px; right: 40px; }
-         .mi-tag { color: #ff8a00; font-size: 0.7rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; }
-         .mi-title { color: #fff; font-size: 2.2rem; font-weight: 950; margin-top: 10px; line-height: 1.1; letter-spacing: -1px; }
-         .mi-right { flex: 1; padding: 60px; overflow-y: auto; scrollbar-width: none; }
-         .mi-right::-webkit-scrollbar { display: none; }
-         .mi-sec h4 { font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: #ff8a00; margin-bottom: 12px; letter-spacing: 2px; }
-         .mi-sec p { color: #475569; font-size: 1.05rem; line-height: 1.8; margin-bottom: 40px; }
-         .mi-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 45px; }
-         .mi-stat { background: #f8fafc; padding: 20px; border-radius: 16px; border: 1.5px solid #f1f5f9; text-align: center; }
-         .ms-v { font-size: 1.4rem; font-weight: 950; color: #0f172a; }
-         .ms-l { font-size: 0.6rem; color: #64748b; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
-         .mi-btn { width: 100%; padding: 22px; border-radius: 18px; border: none; background: #ff8a00; color: #fff; font-weight: 900; cursor: pointer; transition: 0.4s; font-size: 1rem; box-shadow: 0 15px 35px rgba(255,138,0,0.25); }
+         .mi-right { flex: 1; padding: 70px 60px; background: #fff; }
+         .mi-sec h4 { font-size: 0.8rem; font-weight: 900; text-transform: uppercase; color: #ff8a00; margin-bottom: 15px; letter-spacing: 2px; }
+         .mi-sec p { color: #475569; font-size: 1.1rem; line-height: 1.8; margin-bottom: 45px; }
+         .mi-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 50px; }
+         .mi-stat { background: #f8fafc; padding: 25px 15px; border-radius: 20px; border: 1px solid #f1f5f9; text-align: center; }
+         .ms-v { font-size: 1.6rem; font-weight: 950; color: #0f172a; margin-bottom: 5px; }
+         .ms-l { font-size: 0.65rem; color: #64748b; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
+         .mi-btn { width: 100%; padding: 24px; border-radius: 20px; border: none; background: #ff8a00; color: #fff; font-weight: 900; cursor: pointer; transition: 0.4s; font-size: 1.1rem; box-shadow: 0 20px 40px rgba(255,138,0,0.2); }
          .mi-btn:hover { background: #0f172a; transform: translateY(-5px); }
 
          @media (max-width: 1100px) {
-           #case-studies h2 { font-size: 2.8rem !important; }
-           .modal-box { max-width: 800px; }
+           .modal-box { max-width: 900px; }
+           .mi-title { font-size: 2.2rem; }
+           .mi-right { padding: 50px; }
          }
          @media (max-width: 900px) {
-           .modal-box { max-height: 95vh; overflow-y: auto; }
+           .modal-overlay { padding: 0; align-items: flex-start; }
+           .modal-box { border-radius: 0; max-height: none; min-height: 100vh; }
            .modal-inner { flex-direction: column; }
-           .mi-left { width: 100%; height: 280px; }
-           .mi-right { padding: 40px 30px; overflow-y: visible; }
-           .mi-title { font-size: 1.8rem; }
+           .mi-left { width: 100%; height: 350px; }
+           .mi-right { padding: 40px 25px; }
+           .mi-title { font-size: 2rem; }
+           .mi-stats { grid-template-columns: 1fr 1fr; }
          }
-         @media (max-width: 768px) {
-           #case-studies h2 { font-size: 2.2rem !important; }
-           #case-studies { padding: 80px 0 !important; }
-           .card-title { font-size: 1.4rem !important; }
-           .card-info { padding: 25px; }
-           .mi-stats { grid-template-columns: 1fr; gap: 15px; }
+         @media (max-width: 600px) {
+           .mi-stats { grid-template-columns: 1fr; }
+           .mi-left { height: 280px; }
+           .mi-overlay { bottom: 30px; left: 30px; }
          }
       `}</style>
     </section>

@@ -74,24 +74,27 @@ export default function CaseStudies() {
   return (
     <section id="case-studies" style={{ background: '#fff', padding: '140px 0' }}>
       
-      {/* Dynamic Tagline Header */}
-      <div style={{ textAlign: 'center', marginBottom: '100px', padding: '0 25px' }}>
-        <div style={{ width: 60, height: 4, background: accentOrange, margin: '0 auto 30px auto', borderRadius: 2 }} />
-        <div style={{ marginBottom: '15px' }}>
-           <span style={{ 
-              fontSize: '0.85rem', fontWeight: 800, color: textMuted, 
-              letterSpacing: '5px', textTransform: 'uppercase', display: 'block', 
-              marginBottom: '10px' 
-           }}>
-              Great Product is
-           </span>
-           <h2 style={{ 
-              fontSize: '3.8rem', fontWeight: 900, color: primaryNavy, 
-              letterSpacing: '-2px', lineHeight: 1.1, margin: 0 
-           }}>
-              built by <span style={{ color: accentOrange }}>great teams.</span>
-           </h2>
+      {/* Advanced Typography Header */}
+      <div style={{ maxWidth: 1200, margin: '0 auto 100px auto', padding: '0 25px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
+          <div style={{ width: 45, height: 2, background: accentOrange }} />
+          <span style={{ 
+            fontSize: '0.78rem', fontWeight: 900, color: textMuted, 
+            letterSpacing: '5px', textTransform: 'uppercase' 
+          }}>
+            Great product is
+          </span>
         </div>
+        <h2 style={{ 
+          fontSize: '4.2rem', fontWeight: 950, color: primaryNavy, 
+          letterSpacing: '-3px', lineHeight: 1, margin: 0 
+        }}>
+          built by <span style={{ 
+            background: 'linear-gradient(90deg, #ff8a00 0%, #ffae42 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>great teams.</span>
+        </h2>
       </div>
 
       {/* Sleek 3-Column Grid */}

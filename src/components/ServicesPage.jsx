@@ -214,7 +214,7 @@ export default function ServicesPage() {
                </div>
 
                {/* SERVICE GRID */}
-               <div className="v41-grid-layout dx-equal-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+               <div className="v41-grid-layout dx-equal-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '30px' }}>
                   {serviceList.map((s) => (
                      <div key={s.id} className="v41-service-card dx-card-container" style={{ border: `1.5px solid ${themeBorder}` }} onClick={() => setSelectedService(s)}>
                         <div>

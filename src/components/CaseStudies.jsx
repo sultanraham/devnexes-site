@@ -168,30 +168,44 @@ export default function CaseStudies() {
          .card-btn { background: #f8fafc; border: 1.5px solid #e2e8f0; color: #0f172a; padding: 12px 25px; border-radius: 12px; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: 0.3s; width: fit-content; }
          .card-btn:hover { background: #0f172a; border-color: #0f172a; color: #fff; transform: scale(1.05); }
 
-         /* Modal styles minimized */
-         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px; }
-         .modal-box { width: 100%; max-width: 1000px; max-height: 90vh; background: #fff; border-radius: 32px; position: relative; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.2); }
-         .modal-close-btn { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; border: none; background: #fff; z-index: 10; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-         .modal-inner { display: flex; height: 100%; }
-         .mi-left { width: 40%; position: relative; background: #000; flex-shrink: 0; }
-         .mi-left img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+         /* 🏆 MODAL REFINEMENTS (V116) 🏆 */
+         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+         .modal-box { width: 100%; max-width: 1000px; max-height: 90vh; background: #fff; border-radius: 32px; position: relative; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.25); display: flex; flex-direction: column; }
+         .modal-close-btn { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; border: none; background: #fff; z-index: 100; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15); font-weight: 900; }
+         .modal-inner { display: flex; flex: 1; min-height: 0; }
+         .mi-left { width: 40%; position: relative; background: #000; flex-shrink: 0; overflow: hidden; }
+         .mi-left img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
          .mi-overlay { position: absolute; bottom: 40px; left: 40px; right: 40px; }
          .mi-tag { color: #ff8a00; font-size: 0.7rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; }
-         .mi-title { color: #fff; font-size: 2rem; font-weight: 900; margin-top: 10px; line-height: 1.1; }
-         .mi-right { flex: 1; padding: 50px; overflow-y: auto; }
-         .mi-sec h4 { font-size: 0.7rem; font-weight: 900; text-transform: uppercase; color: #ff8a00; margin-bottom: 10px; }
-         .mi-sec p { color: #475569; font-size: 1rem; line-height: 1.7; margin-bottom: 30px; }
-         .mi-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 40px; }
-         .mi-stat { background: #f8fafc; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9; text-align: center; }
-         .ms-v { font-size: 1.2rem; font-weight: 900; color: #0f172a; }
-         .ms-l { font-size: 0.55rem; color: #64748b; text-transform: uppercase; font-weight: 800; }
-         .mi-btn { width: 100%; padding: 18px; border-radius: 15px; border: none; background: #ff8a00; color: #fff; font-weight: 800; cursor: pointer; transition: 0.3s; }
-         .mi-btn:hover { background: #0f172a; }
+         .mi-title { color: #fff; font-size: 2.2rem; font-weight: 950; margin-top: 10px; line-height: 1.1; letter-spacing: -1px; }
+         .mi-right { flex: 1; padding: 60px; overflow-y: auto; scrollbar-width: none; }
+         .mi-right::-webkit-scrollbar { display: none; }
+         .mi-sec h4 { font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: #ff8a00; margin-bottom: 12px; letter-spacing: 2px; }
+         .mi-sec p { color: #475569; font-size: 1.05rem; line-height: 1.8; margin-bottom: 40px; }
+         .mi-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 45px; }
+         .mi-stat { background: #f8fafc; padding: 20px; border-radius: 16px; border: 1.5px solid #f1f5f9; text-align: center; }
+         .ms-v { font-size: 1.4rem; font-weight: 950; color: #0f172a; }
+         .ms-l { font-size: 0.6rem; color: #64748b; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
+         .mi-btn { width: 100%; padding: 22px; border-radius: 18px; border: none; background: #ff8a00; color: #fff; font-weight: 900; cursor: pointer; transition: 0.4s; font-size: 1rem; box-shadow: 0 15px 35px rgba(255,138,0,0.25); }
+         .mi-btn:hover { background: #0f172a; transform: translateY(-5px); }
 
+         @media (max-width: 1100px) {
+           #case-studies h2 { font-size: 2.8rem !important; }
+           .modal-box { max-width: 800px; }
+         }
          @media (max-width: 900px) {
+           .modal-box { max-height: 95vh; overflow-y: auto; }
            .modal-inner { flex-direction: column; }
-           .mi-left { width: 100%; height: 200px; }
-           .mi-right { padding: 30px; }
+           .mi-left { width: 100%; height: 280px; }
+           .mi-right { padding: 40px 30px; overflow-y: visible; }
+           .mi-title { font-size: 1.8rem; }
+         }
+         @media (max-width: 768px) {
+           #case-studies h2 { font-size: 2.2rem !important; }
+           #case-studies { padding: 80px 0 !important; }
+           .card-title { font-size: 1.4rem !important; }
+           .card-info { padding: 25px; }
+           .mi-stats { grid-template-columns: 1fr; gap: 15px; }
          }
       `}</style>
     </section>
